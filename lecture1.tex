@@ -1,0 +1,48 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textpos}
+
+\usetheme{Madrid}
+\usecolortheme{beaver}
+\setbeamertemplate{footline}[frame number]{}
+
+\title{Einführung in Matlab\\{\scriptsize 1. Grundlagen}}
+\author{Prof. Dr. Christiane Zarfl, Dipl.-Inf. Willi Kappler}
+\date{\today}
+\institute{Universität Tübingen}
+
+
+% See here: http://tex.stackexchange.com/questions/27906/positioning-logo-in-the-front-page-as-well-as-slides
+% https://github.com/mikecroucher/awesome-MATLAB
+
+
+\begin{document}
+    \begin{frame}[plain]
+        \begin{textblock*}{0cm}(0.5cm, -0.7cm)
+            \includegraphics[width=11.0cm]{logo_uni_tuebingen.png}
+        \end{textblock*}
+        \titlepage
+
+    \end{frame}
+
+    \section{Einleitung}
+    \begin{frame}
+        \frametitle{Inhaltsverzeichnis}
+        \tableofcontents[currentsection]
+    \end{frame}
+
+    \section{Part 1}
+    \begin{frame}
+        \frametitle{This is the first slide}
+        Text
+    \end{frame}
+
+    \section{Part 2}
+    \begin{frame}
+        \frametitle{This is the second slide}
+        \framesubtitle{A bit more information about this}
+        Text
+    \end{frame}
+\end{document}
