@@ -1,0 +1,29 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textpos}
+\usepackage{tikz}
+
+\usetheme{Madrid}
+\usecolortheme{beaver}
+
+% Custom changes:
+\setbeamertemplate{footline}[frame number]{}
+\definecolor{university_tuebingen}{RGB}{165,30,55}
+\setbeamercolor{frametitle}{fg=university_tuebingen, bg=white}
+\setbeamercolor{title}{fg=university_tuebingen}
+
+\addtobeamertemplate{frametitle}{}{
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,yshift=0cm] at (current page.north east)
+{\includegraphics[width=3cm]{common/logo_uni_tuebingen2.png}};
+\end{tikzpicture}}
+
+
+
+\author{Prof. Dr. Christiane Zarfl, Dipl.-Inf. Willi Kappler}
+%\date{\today}
+\date{}
+%\institute{Universität Tübingen}
+\institute{}
