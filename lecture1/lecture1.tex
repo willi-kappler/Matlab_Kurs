@@ -2,10 +2,6 @@
 
 \title{\input{../common/title.txt}\\{\scriptsize 1. Grundlagen}}
 
-% See here: http://tex.stackexchange.com/questions/27906/positioning-logo-in-the-front-page-as-well-as-slides
-% https://github.com/mikecroucher/awesome-MATLAB
-
-
 \begin{document}
     \input{../common/title.tex}
 
@@ -18,7 +14,19 @@
     \section{Part 1}
     \begin{frame}
         \frametitle{This is the first slide}
-        Text
+        \begin{columns}[t]
+          \begin{column}{5cm}
+            \begin{exampleblock}{Matlab Code:}
+              \lstinputlisting[language=Matlab]{example1.1.m}
+            \end{exampleblock}
+          \end{column}
+          \begin{column}{5cm}
+            \begin{block}{Result:}
+              \lstinputlisting[language=Matlab]{example1.1.txt}
+            \end{block}
+          \end{column}
+        \end{columns}
+
     \end{frame}
 
     \section{Part 2}
