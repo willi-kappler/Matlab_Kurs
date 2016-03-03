@@ -110,8 +110,8 @@
         \frametitle{Was ist Matlab}
 
         \begin{itemize}
-          \item "\emph{Matlab} ist eine kommerzielle Software des Unternehmens \emph{The MathWorks, Inc.} zur Lösung mathematischer Probleme
-          und zur grafischen Darstellung der Ergebnisse." (Quelle: \href{https://de.wikipedia.org/wiki/Matlab}{\beamergotobutton{Wikipedia}}).
+          \item ``\emph{Matlab} ist eine kommerzielle Software des Unternehmens \emph{The MathWorks, Inc.} zur Lösung mathematischer Probleme
+          und zur grafischen Darstellung der Ergebnisse.'' (Quelle: \href{https://de.wikipedia.org/wiki/Matlab}{\beamergotobutton{Wikipedia}}).
           \item Matlab leitet sich ab von \textbf{MAT}rix \textbf{LAB}oratory.
           \item Wir benutzen Matlab als (nummerische) Programmiersprache.
           \item Wie ein Taschenrechner oder Excel arbeitet Matlab nummerisch (mit Zahlenwerten, also nicht symbolisch wie
@@ -137,11 +137,29 @@
 
     \subsection{GUI}
     \begin{frame}
-        \frametitle{Die Matlab GUI}
-        \vspace{-0.8cm}
-        \begin{figure}
-          \includegraphics[width=10.0cm]{matlab_gui1.png}
-        \end{figure}
+      \frametitle{Die Matlab GUI}
+      \vspace{-0.8cm}
+      %\begin{figure}
+        %\includegraphics[width=10.0cm]{matlab_gui1.png}
+      %\end{figure}
+
+      \begin{figure}
+        \begin{tikzpicture}
+          \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=10.0cm]{matlab_gui1.png}};
+          \begin{scope}[x={(image.south east)},y={(image.north west)}]
+            \node (a) at (0.5, 1.05) {gegenwärtiges Verzeichnis};
+            \node[align=left] (b) at (0.1, 0.4) {Dateien im \\gegenwärtigen \\Verzeichnis};
+            \node[align=left] (c) at (0.5, 0.5) {Variablen im \\Arbeitsspeicher};
+            \node[align=left] (d) at (0.5, 0.15) {Eingabefenster mit \\``prompt'' (>>)};
+            \node[align=left] (e) at (0.85, 0.15) {Eingabe-\\verlauf};
+            \draw[line width=0.1cm, ->] (a) -- +(0, -0.2);
+            \draw[line width=0.1cm, ->] (b) -- +(0, 0.25);
+            \draw[line width=0.1cm, ->] (c) -- +(0.3, 0.15);
+            \draw[line width=0.1cm, ->] (e) -- +(0, 0.2);
+          \end{scope}
+        \end{tikzpicture}
+      \end{figure}
+
     \end{frame}
 
 
