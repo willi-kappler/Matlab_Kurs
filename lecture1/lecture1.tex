@@ -8,7 +8,7 @@
     \section{Einleitung}
     \begin{frame}
       \frametitle{Inhaltsverzeichnis}
-      \tableofcontents[currentsection]
+      \tableofcontents[currentsection, hideallsubsections]
     \end{frame}
 
     \subsection{Warum Matlab ?}
@@ -96,8 +96,8 @@
           \begin{itemize}
             \itemsep0.3cm
             \item Auf Institutshardware bereits vorinstalliert
-            \item ZDV: Matlab herunterladen \href{https://services.zdv.uni-tuebingen.de/CampusSoftware/}{\beamergotobutton{Link}}
-            \item GNU Octave \href{https://www.gnu.org/software/octave/}{\beamergotobutton{Link}} (Open Source, aber nicht 100\% compatibel)
+            \item ZDV: Matlab \href{https://services.zdv.uni-tuebingen.de/CampusSoftware/}{\beamergotobutton{hier}} herunterladen
+            \item GNU Octave \href{https://www.gnu.org/software/octave/}{\beamergotobutton{Webseite}} (Open Source, aber nicht 100\% compatibel)
           \end{itemize}
 
           \item \alert{Auf Institutshardware bitte zuerst ein eigenes Verzeichnis anlegen!}
@@ -138,10 +138,8 @@
     \subsection{GUI}
     \begin{frame}
       \frametitle{Die Matlab GUI}
+
       \vspace{-0.8cm}
-      %\begin{figure}
-        %\includegraphics[width=10.0cm]{matlab_gui1.png}
-      %\end{figure}
 
       \begin{figure}
         \begin{tikzpicture}
@@ -150,7 +148,7 @@
             \node (a) at (0.5, 1.05) {gegenwärtiges Verzeichnis};
             \node[align=left] (b) at (0.1, 0.4) {Dateien im \\gegenwärtigen \\Verzeichnis};
             \node[align=left] (c) at (0.5, 0.5) {Variablen im \\Arbeitsspeicher};
-            \node[align=left] (d) at (0.5, 0.15) {Eingabefenster mit \\``prompt'' (>>)};
+            \node[align=left] (d) at (0.5, 0.15) {Eingabefenster mit \\``Prompt'' (>>)};
             \node[align=left] (e) at (0.85, 0.15) {Eingabe-\\verlauf};
             \draw[line width=0.1cm, ->] (a) -- +(0, -0.2);
             \draw[line width=0.1cm, ->] (b) -- +(0, 0.25);
@@ -159,34 +157,108 @@
           \end{scope}
         \end{tikzpicture}
       \end{figure}
-
     \end{frame}
 
-
-
-
-    \section{Part 1}
+    \subsection{Hilfe}
     \begin{frame}
-        \frametitle{This is the first slide}
+      \frametitle{Hilfe in Matlab}
+      \begin{itemize}
+        \itemsep0.3cm
+        \item Niemand kann alle Befehle kennen, deshalb ist die (ausführliche) Hilfe in Matlab so wichtig.
+        \item Allgemeines Hilfe-Fenster: \menu{Help > Documentation} (\keys{F1})
+        \item Information zu einem Befehl:
+
+        \usebeamercolor{block body example}
+        \begin{itemize}
+          \itemsep0.3cm
+          \item \colorbox{bg}{\texttt{doc <Befehlsname>}} (Info in einem extra Fenster)
+          \item \colorbox{bg}{\texttt{help <Befehlsname>}} (Info im Befehlsfenster)
+        \end{itemize}
+
+        \item Beispiele: Im Prompt eingeben:
+
+        \begin{itemize}
+          \itemsep0.3cm
+          \item \colorbox{bg}{\texttt{help sin}}
+          \item \colorbox{bg}{\texttt{help exp}}
+          \item \colorbox{bg}{\texttt{doc plot}}
+        \end{itemize}
+      \end{itemize}
+    \end{frame}
+
+    \section{Grundlagen}
+    \subsection{Einfaches Rechnen}
+    \begin{frame}
+      \frametitle{Einfaches Rechnen mit Matlab}
+      \begin{itemize}
+        \itemsep0.3cm
+        \usebeamercolor{block body}
+        \item Alle Anweisungen werden nach dem Prompt (>>) eingegeben und mit \keys{\return} (Return) bestätigt. Matlab nennt das Ergebnis \colorbox{bg}{\texttt{ans}} (für answer):
+        \usebeamercolor{normal text}
+
         \begin{columns}[t]
           \begin{column}{5cm}
-            \begin{exampleblock}{Matlab Code:}
-              \lstinputlisting[language=Matlab]{example1.1.m}
-            \end{exampleblock}
+            \usebeamercolor{block body example}
+            \colorbox{bg}{\lstinputlisting[language=Matlab]{example1.1.m}}
           \end{column}
+
           \begin{column}{5cm}
-            \begin{block}{Ergebnis:}
-              \lstinputlisting[language=Matlab]{example1.1.txt}
-            \end{block}
+            \usebeamercolor{block body}
+            \colorbox{bg}{\lstinputlisting[language=Matlab]{example1.1.txt}}
           \end{column}
         \end{columns}
 
+        \item Addition ($\oplus$), Subtraktion ($\ominus$), Multiplikation ($\otimes$) und Division ($\oslash$) wie im Taschenrechner (Matlab kennt ``Punkt vor Strich-Rechnung'').
+        \item Braucht man einen \textbf{Ausdruck öfters}, so kann man ihn als \textbf{Variable} definieren:
+
+        \vspace{0.3cm}
+
+        \begin{columns}[t]
+          \begin{column}{5cm}
+            \usebeamercolor{block body example}
+            \colorbox{bg}{\lstinputlisting[language=Matlab]{example1.2.m}}
+          \end{column}
+
+          \begin{column}{5cm}
+            \usebeamercolor{block body}
+            \colorbox{bg}{\lstinputlisting[language=Matlab]{example1.2.txt}}
+          \end{column}
+        \end{columns}
+
+        \item Variablen werden im Arbeitsspeicher (Workspace) gespeichert (s. Arbeitsspeicher-Fenster).
+      \end{itemize}
     \end{frame}
 
-    \section{Part 2}
     \begin{frame}
-        \frametitle{This is the second slide}
-        \framesubtitle{A bit more information about this}
-        Text
+      \frametitle{Grundlegendes}
+      \begin{itemize}
+        \item Ein Semikolon (;) am Ende der Eingabezeile unterdrückt die Ausgabe des Ergebnisses.
+        \item Matlab \textbf{unterscheidet} zwischen Groß- und Kleinbuchstaben!
+        \item Potenzieren wird \textbf{vor} einer \textbf{Multiplikation} oder \textbf{Division} ausgewertet, sonst gilt ``Punkt-vor-Strich''; runde Klammern ``('' und ``)'' um die Reihenfolge der Berechnung zu steuern.
+        \item Mehrere Anweisungen in einer Zeile sind zulässig:
+
+        \begin{itemize}
+          \item Sind sie durch ein Komma getrennt, so folgt eine Ausgabe.
+          \item Werden sie durch ein Semikolon getrennt, so folgt keine Ausgabe:
+
+          \vspace{0.3cm}
+
+          \begin{columns}[t]
+            \begin{column}{5cm}
+              \usebeamercolor{block body example}
+              \colorbox{bg}{\lstinputlisting[language=Matlab]{example1.3.m}}
+            \end{column}
+
+            \begin{column}{5cm}
+              \usebeamercolor{block body}
+              \colorbox{bg}{\lstinputlisting[language=Matlab]{example1.3.txt}}
+            \end{column}
+          \end{columns}
+
+        \end{itemize}
+      \end{itemize}
     \end{frame}
+
+
+
 \end{document}
