@@ -6,6 +6,8 @@
 \usepackage{tikz}
 \usepackage{listings}
 \usepackage{menukeys}
+\usepackage[tikz]{mdframed}
+\usepackage{courier}
 
 \usetheme{Madrid}
 \usecolortheme{beaver}
@@ -26,6 +28,15 @@
 % Settings for Matlab syntax highlighting
 % backgroundcolor=\color{yellow},
 \lstset{numbers=left, numberstyle=\tiny, numberblanklines=false, basicstyle=\small}
+
+% Option for mdframed:
+\newmdenv[backgroundcolor=yellow!30, roundcorner=5pt]{exercise}
+
+% New command for auto increment exercise:
+\newcounter{mexercise}
+%\newcommand{\exercise}{\stepcounter{exercise} Übung \theexercise}
+%\DeclareRobustCommand{\mexercise}{Übung}
+\newcommand{\mexercise}{Übung \themexercise}
 
 
 \author{Prof. Dr. Christiane Zarfl, Dipl.-Inf. Willi Kappler}

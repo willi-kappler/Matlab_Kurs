@@ -2,6 +2,8 @@
 
 \title{\input{../common/title.txt}\\{\scriptsize 1. Grundlagen}}
 
+\setcounter{mexercise}{1}
+
 \begin{document}
     \input{../common/title.tex}
 
@@ -123,7 +125,7 @@
 
     \subsection{Ausblick}
     \begin{frame}
-        \frametitle{Nach diese ersten Kurseinheit...}
+        \frametitle{Nach dieser ersten Kurseinheit...}
 
         \begin{itemize}
           \itemsep0.3cm
@@ -258,6 +260,98 @@
         \end{itemize}
       \end{itemize}
     \end{frame}
+
+    \subsection{Variablen}
+    \begin{frame}
+      \frametitle{Regeln für Variablen}
+      \begin{itemize}
+        \item Regeln bei der Definition von Variablen:
+        \item Das erste Zeichen muss ein Buchstabe sein (Keine Zahl!)
+        \item Keine Sonderzeichen (außer Unterstrich)
+        \item Max. Zeichenlänge (abhängig vom Computer)
+        \item \alert{Vorsicht:} Variablennamen identisch mit Funktionen ist erlaubt, hat aber Seiteneffekte!
+        \item Variablen haben einen bestimmten \textbf{Typ}, z.B. Ganzzahl, Fließkommazahl, Vector, Matrix, ...
+      \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+      \frametitle{Auflisten und löschen von Variablen}
+      \begin{itemize}
+        \item \texttt{who:} gibt eine Liste der Variablen im Arbeitsspeicher aus
+        \item \texttt{whos:} gibt zusätzliche Information (Typ, Größe, Speicherbedarf)
+        \item \texttt{clear <Variable>:} löscht die Variable
+        \item \texttt{clear all:} löscht alle Variablen
+        \item \texttt{clc:} löscht den Inhalt des Befehlsfensters
+      \end{itemize}
+    \end{frame}
+
+    \subsection{\mexercise}
+    \begin{frame}
+      \frametitle{\mexercise}
+      \begin{exercise}
+          Geben Sie nacheinander folgende Anweisungen ein. Überlegen Sie vorher was wird Matlab ausgeben? \\ \\
+          \texttt{u = 2,v = 5;} \keys{\return}\\
+          \texttt{(u+6)/4} \keys{\return}\\
+          \texttt{y = x+1} \keys{\return}\\
+          \texttt{y = 3u} \keys{\return}\\ \\
+          Welche der folgenden Variablennamen sind \textbf{nicht} zulässig? \\ \\
+          \texttt{anzahl}, \texttt{Summe\_a+b}, \texttt{5\_Tageskarte}, \texttt{dauer\_phase3}, \texttt{sin}
+      \end{exercise}
+  \end{frame}
+
+  \subsection{Funktionen}
+  \begin{frame}
+    \frametitle{Einfache Funktionen}
+    \begin{itemize}
+      \item Es gibt in Matlab bereits ``eingebaute'' Funktionen (viel mehr als im Taschenrechner und Excel).
+      \item Z.B. die Wurzelfunktion (square root): \texttt{a = sqrt(2)/2}
+      \item Nähere Informationen zur Funktion \texttt{sqrt} erhält man mit \texttt{help sqrt}.
+      \item Funktionen können keinen, einen oder mehrere \textbf{Eingabeparameter} haben.
+      \item Funktionen können keinen, einen oder mehrere \textbf{Rückgabewerte} haben.
+      \item Wie bei Variablen auch haben Funktionen einen bestimmten Typ. D.h. die Ein- und Ausgabewerte \textbf{müssen} vom Typ her passen.
+    \end{itemize}
+  \end{frame}
+
+  \stepcounter{mexercise}
+  \subsection{\mexercise}
+  \begin{frame}
+    \frametitle{\mexercise}
+    \begin{exercise}
+        Berechnen Sie den natürlichen Logarithmus von \texttt{1.36} \\ \\
+        Berechnen Sie auch den Logarithmus zur Basis \texttt{10} von \texttt{1.36} \\ \\
+        (Zusatz: Wie berechnen Sie den Logartihmus zur Basis \texttt{3} von \texttt{1.36}?)
+    \end{exercise}
+\end{frame}
+
+\stepcounter{mexercise}
+\subsection{\mexercise}
+\begin{frame}
+  \frametitle{\mexercise}
+  \begin{exercise}
+      Berechnen Sie \texttt{cos($\pi$)} und \texttt{cos($\pi / 2$)} \\ \\
+      $\pi$ ist in Matlab bereits eingebaut und wird mit \texttt{pi} bezeichnet \\ \\
+      \alert{Vorsicht}: Das Argument der trigonometrischen Funktionen (\texttt{sin, cos, tan, cot}) wird von Matlab immer im \textbf{Bogenmaß} interpretiert \\ \\
+      Berechnen Sie den Kosinus von \texttt{180$^{\circ}$} und \texttt{90$^{\circ}$}
+  \end{exercise}
+\end{frame}
+
+\subsection{Zahlen, Vektoren und Matrizen}
+\begin{frame}
+  \frametitle{Zahlen, Vektoren und Matrizen in Matlab}
+  \begin{itemize}
+      \item Eine Gruppierung von mehreren Zahlenwerten nennt man einen \textbf{Vektor}
+      \item Eine zweidimensionale Gruppierung von Zahlen nennt man eine \textbf{Matrix}
+      \item \textbf{Es folgt:} Eine Zahl ist sowohl ein spezieller Vektor (der Länge \texttt{1}), als auch eine spezielle Matrix der Dimension \texttt{1$\times$1}.
+      \item \textbf{Ein Vektor der Länge n} ist eine spezielle Matrix der Dimension \texttt{n$\times$1} (Spaltenvektor) oder \texttt{1$\times$n} (Zeilenvektor)
+      \item Matlab (\textbf{MAT}rix \textbf{LAB}oratory) kennt intern nur Matrizen!
+      \item Die Berechnung der Wurzel in Matlab von vorhin: \\
+      \texttt{a = sqrt(2)/2} \\
+      Hier ist \texttt{a} eine \texttt{1$\times$1} Matrix (Selbst die Konstante \texttt{2} wird als eine konstante \texttt{1$\times$1} Matrix interpretiert)
+  \end{itemize}
+\end{frame}
+
+
+
 
 
 
