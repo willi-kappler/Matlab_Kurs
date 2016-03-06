@@ -302,7 +302,8 @@
   \end{exercise}
 \end{frame}
 
-\subsection{Zahlen, Vektoren und Matrizen}
+\section{Zahlen, Vektoren und Matrizen}
+\subsection{Generelles}
 \begin{frame}
   \frametitle{Zahlen, Vektoren und Matrizen in Matlab}
   \begin{itemize}
@@ -331,10 +332,64 @@
       \item Zeilenvektor in einer Variablen definieren: \matlabInput{x = [0 2 4 6 8 10]}.
       \item Die Quadratwurzelfunktion auf den gerade definierten Zeilenvektor \matlabInput{x} anwenden: \matlabInput{y = sqrt(x)}.
       \item Das Ergebnis in der Variablen \matlabInput{y} ist nun ebenfalls ein Zeilenvektor und enthält die einzelnen
-      Quadratwurzel der oben aufgeführten Zahlen.
+      Quadratwurzeln der oben aufgeführten Zahlen.
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Elemente von Vektoren}
+  \begin{itemize}
+      \item Auf die Elemente eines Vektors wird mit der runden Klammer zugegriffen ``()''. Z.B. \matlabInput{x(3)}
+      gibt das dritte Element von \matlabInput{x} zurück.
+      \item Mit dem Doppelpunkt-Operator \matlabInput{:} können in Matlab Zahlenfolgen als Vektoren definiert werden. Z.B. kann man
+      \matlabInput{x = [0 2 4 6 8 10 12]} kürzer schreiben als \matlabInput{x = 0:2:12}.
+      \item Die generelle Syntax lautet: \matlabInput{Startwert:Schrittweite:Endwert} oder \matlabInput{Startwert:Endwert} mit Schrittweite \matlabInput{1}.
+      \item Schrittweiten dürfen auch negativ sein: \matlabInput{u = 29:-2:0}
+  \end{itemize}
+\end{frame}
+
+\secMexercise
+\begin{frame}
+  \frameMexercise
+  \begin{exercise}
+      Erzeugen Sie einen Vektor \matlabInput{y}, der die Funktionswerte des natürlichen Logarithmus an den Stellen
+      \matlabInput{x = 1,3,5,7,9} enthält. \\ \\
+
+      Was gibt Matlab aus, wenn Sie \matlabInput{y(1)} eingeben?
+  \end{exercise}
+\end{frame}
+
+\secMexercise
+\begin{frame}
+  \frameMexercise
+  \begin{exercise}
+      Geben Sie die Vektoren \matlabInput{a} und \matlabInput{b} mit den Elementen \\
+      \matlabInput{–10,-8,-6,...,6,8,10} bzw. \matlabInput{10,9,8,...0} mit kurzen Anweisungen ein.
+      \alert{Tipp}: \matlabInput{help colon} \\ \\
+
+      Sei \matlabInput{x = [1 3 -2 6 0 7 11 -8 -5]}. Finden Sie mit \\
+      \matlabInput{help paren} und \matlabInput{help colon} heraus, wie man aus \matlabInput{x} einen Vektor bildet, der
+
+      \begin{itemize}
+          \item das 1., 4. und 9. Element von \matlabInput{x} enthält
+          \item aus den ersten 4 Elementen von \matlabInput{x} besteht
+          \item jedes zweite Element von \matlabInput{x} enthält.
+      \end{itemize}
+  \end{exercise}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Elementweises Rechnen mit Vektoren}
+  \begin{itemize}
+      \item Vektoraddition (-subtraktion) und die Multiplikation (Division) eines Vektors mit einem Skalar sind elementweise definiert durch:
+      \item \matlabInput{w = [1 2 3]*2}: Jedes Element des  Vektors \matlabInput{[1 2 3]} wird mit \matlabInput{2} multipliziert und
+      in der Variable \matlabInput{w} gespeichert.
+      \item \matlabInput{[2 -1 9] + [1 3 6]} ergibt den Vektor \matlabOutput{[3 2 15]}
+      \item \alert{Achtung}: Es können nur Vektoren (Matrizen) mit gleichen Dimensionen addiert oder subtrahiert werden!
+      \item Die elementweise Addition (Subtraktion) eines Vektors mit einem Skalar ist zulässig, z.B.: \matlabInput{[2 5 7] + 3},
+      ergibt \matlabOutput{[5 8 10]}
+  \end{itemize}
+\end{frame}
 
 
 
