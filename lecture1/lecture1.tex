@@ -2,7 +2,7 @@
 
 \title{\input{../common/title.txt}\\{\scriptsize 1. Grundlagen}}
 
-\setcounter{mexercise}{1}
+\setcounter{mexercise}{0}
 
 \begin{document}
     \input{../common/title.tex}
@@ -170,20 +170,19 @@
         \item Allgemeines Hilfe-Fenster: \menu{Help > Documentation} (\keys{F1})
         \item Information zu einem Befehl:
 
-        \usebeamercolor{block body example}
         \begin{itemize}
           \itemsep0.3cm
-          \item \colorbox{bg}{\texttt{doc <Befehlsname>}} (Info in einem extra Fenster)
-          \item \colorbox{bg}{\texttt{help <Befehlsname>}} (Info im Befehlsfenster)
+          \item \matlabInput{doc <Befehlsname>} (Info in einem extra Fenster)
+          \item \matlabInput{help <Befehlsname>} (Info im Befehlsfenster)
         \end{itemize}
 
         \item Beispiele: Im Prompt eingeben:
 
         \begin{itemize}
           \itemsep0.3cm
-          \item \colorbox{bg}{\texttt{help sin}}
-          \item \colorbox{bg}{\texttt{help exp}}
-          \item \colorbox{bg}{\texttt{doc plot}}
+          \item \matlabInput{help sin}
+          \item \matlabInput{help exp}
+          \item \matlabInput{doc plot}
         \end{itemize}
       \end{itemize}
     \end{frame}
@@ -194,38 +193,18 @@
       \frametitle{Einfaches Rechnen mit Matlab}
       \begin{itemize}
         \itemsep0.3cm
-        \usebeamercolor{block body}
-        \item Alle Anweisungen werden nach dem Prompt (>>) eingegeben und mit \keys{\return} (Return) bestätigt. Matlab nennt das Ergebnis \colorbox{bg}{\texttt{ans}} (für answer):
-        \usebeamercolor{normal text}
+        \item Alle Anweisungen werden nach dem Prompt (\texttt{>>}) eingegeben und mit \keys{\return} (Return) bestätigt. Matlab nennt das Ergebnis \matlabOutput{ans} (für answer):
 
-        \begin{columns}[t]
-          \begin{column}{5cm}
-            \usebeamercolor{block body example}
-            \colorbox{bg}{\lstinputlisting[language=Matlab]{example1.1.m}}
-          \end{column}
+        \vspace{0.3cm}
 
-          \begin{column}{5cm}
-            \usebeamercolor{block body}
-            \colorbox{bg}{\lstinputlisting[language=Matlab]{example1.1.txt}}
-          \end{column}
-        \end{columns}
+        \insertMatlabCode{example1.1}
 
         \item Addition ($\oplus$), Subtraktion ($\ominus$), Multiplikation ($\otimes$) und Division ($\oslash$) wie im Taschenrechner (Matlab kennt ``Punkt vor Strich-Rechnung'').
         \item Braucht man einen \textbf{Ausdruck öfters}, so kann man ihn als \textbf{Variable} definieren:
 
         \vspace{0.3cm}
 
-        \begin{columns}[t]
-          \begin{column}{5cm}
-            \usebeamercolor{block body example}
-            \colorbox{bg}{\lstinputlisting[language=Matlab]{example1.2.m}}
-          \end{column}
-
-          \begin{column}{5cm}
-            \usebeamercolor{block body}
-            \colorbox{bg}{\lstinputlisting[language=Matlab]{example1.2.txt}}
-          \end{column}
-        \end{columns}
+        \insertMatlabCode{example1.2}
 
         \item Variablen werden im Arbeitsspeicher (Workspace) gespeichert (s. Arbeitsspeicher-Fenster).
       \end{itemize}
@@ -245,17 +224,7 @@
 
           \vspace{0.3cm}
 
-          \begin{columns}[t]
-            \begin{column}{5cm}
-              \usebeamercolor{block body example}
-              \colorbox{bg}{\lstinputlisting[language=Matlab]{example1.3.m}}
-            \end{column}
-
-            \begin{column}{5cm}
-              \usebeamercolor{block body}
-              \colorbox{bg}{\lstinputlisting[language=Matlab]{example1.3.txt}}
-            \end{column}
-          \end{columns}
+          \insertMatlabCode{example1.3}
 
         \end{itemize}
       \end{itemize}
@@ -277,17 +246,17 @@
     \begin{frame}
       \frametitle{Auflisten und löschen von Variablen}
       \begin{itemize}
-        \item \texttt{who:} gibt eine Liste der Variablen im Arbeitsspeicher aus
-        \item \texttt{whos:} gibt zusätzliche Information (Typ, Größe, Speicherbedarf)
-        \item \texttt{clear <Variable>:} löscht die Variable
-        \item \texttt{clear all:} löscht alle Variablen
-        \item \texttt{clc:} löscht den Inhalt des Befehlsfensters
+        \item \matlabInput{who}: gibt eine Liste der Variablen im Arbeitsspeicher aus
+        \item \matlabInput{whos}: gibt zusätzliche Information (Typ, Größe, Speicherbedarf)
+        \item \matlabInput{clear <Variable>}: löscht die Variable
+        \item \matlabInput{clear all}: löscht alle Variablen
+        \item \matlabInput{clc}: löscht den Inhalt des Befehlsfensters
       \end{itemize}
     \end{frame}
 
-    \subsection{\mexercise}
+    \secMexercise
     \begin{frame}
-      \frametitle{\mexercise}
+      \frameMexercise
       \begin{exercise}
           Geben Sie nacheinander folgende Anweisungen ein. Überlegen Sie vorher was wird Matlab ausgeben? \\ \\
           \texttt{u = 2,v = 5;} \keys{\return}\\
@@ -304,18 +273,17 @@
     \frametitle{Einfache Funktionen}
     \begin{itemize}
       \item Es gibt in Matlab bereits ``eingebaute'' Funktionen (viel mehr als im Taschenrechner und Excel).
-      \item Z.B. die Wurzelfunktion (square root): \texttt{a = sqrt(2)/2}
-      \item Nähere Informationen zur Funktion \texttt{sqrt} erhält man mit \texttt{help sqrt}.
+      \item Z.B. die Wurzelfunktion (square root): \matlabInput{a = sqrt(2)/2}
+      \item Nähere Informationen zur Funktion \matlabInput{sqrt} erhält man mit \matlabInput{help sqrt}.
       \item Funktionen können keinen, einen oder mehrere \textbf{Eingabeparameter} haben.
       \item Funktionen können keinen, einen oder mehrere \textbf{Rückgabewerte} haben.
       \item Wie bei Variablen auch haben Funktionen einen bestimmten Typ. D.h. die Ein- und Ausgabewerte \textbf{müssen} vom Typ her passen.
     \end{itemize}
   \end{frame}
 
-  \stepcounter{mexercise}
-  \subsection{\mexercise}
+  \secMexercise
   \begin{frame}
-    \frametitle{\mexercise}
+    \frameMexercise
     \begin{exercise}
         Berechnen Sie den natürlichen Logarithmus von \texttt{1.36} \\ \\
         Berechnen Sie auch den Logarithmus zur Basis \texttt{10} von \texttt{1.36} \\ \\
@@ -323,10 +291,9 @@
     \end{exercise}
 \end{frame}
 
-\stepcounter{mexercise}
-\subsection{\mexercise}
+\secMexercise
 \begin{frame}
-  \frametitle{\mexercise}
+  \frameMexercise
   \begin{exercise}
       Berechnen Sie \texttt{cos($\pi$)} und \texttt{cos($\pi / 2$)} \\ \\
       $\pi$ ist in Matlab bereits eingebaut und wird mit \texttt{pi} bezeichnet \\ \\
@@ -341,15 +308,32 @@
   \begin{itemize}
       \item Eine Gruppierung von mehreren Zahlenwerten nennt man einen \textbf{Vektor}
       \item Eine zweidimensionale Gruppierung von Zahlen nennt man eine \textbf{Matrix}
-      \item \textbf{Es folgt:} Eine Zahl ist sowohl ein spezieller Vektor (der Länge \texttt{1}), als auch eine spezielle Matrix der Dimension \texttt{1$\times$1}.
+      \item \textbf{Es folgt}: Eine Zahl ist sowohl ein spezieller Vektor (der Länge \texttt{1}), als auch eine spezielle Matrix der Dimension \texttt{1$\times$1}.
       \item \textbf{Ein Vektor der Länge n} ist eine spezielle Matrix der Dimension \texttt{n$\times$1} (Spaltenvektor) oder \texttt{1$\times$n} (Zeilenvektor)
       \item Matlab (\textbf{MAT}rix \textbf{LAB}oratory) kennt intern nur Matrizen!
       \item Die Berechnung der Wurzel in Matlab von vorhin: \\
-      \texttt{a = sqrt(2)/2} \\
+      \matlabInput{a = sqrt(2)/2} \\
       Hier ist \texttt{a} eine \texttt{1$\times$1} Matrix (Selbst die Konstante \texttt{2} wird als eine konstante \texttt{1$\times$1} Matrix interpretiert)
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Eingabe von Vektoren}
+
+  \vspace{-0.5cm}
+
+  \begin{itemize}
+      \item Vektoren werden in Matlab immer in eckigen Klammern eingegeben: ``['' und ``]''
+      \item Die Elemente des Vektors sind durch Leerzeichen (oder ein Komma) zu trennen
+      (es ergibt sich ein Zeilenvektor, Semikolon als Trenner ergibt einen Spaltenvektor).
+      \item Um in Matlab Tipparbeit zu sparen können Vektoren verwendet werden.
+      Möchte man z.B. die Quadratwurzel mehrerer Werte berechnen, so geht man folgendermaßen vor:
+      \item Zeilenvektor in einer Variablen definieren: \matlabInput{x = [0 2 4 6 8 10]}.
+      \item Die Quadratwurzelfunktion auf den gerade definierten Zeilenvektor \matlabInput{x} anwenden: \matlabInput{y = sqrt(x)}.
+      \item Das Ergebnis in der Variablen \matlabInput{y} ist nun ebenfalls ein Zeilenvektor und enthält die einzelnen
+      Quadratwurzel der oben aufgeführten Zahlen.
+  \end{itemize}
+\end{frame}
 
 
 

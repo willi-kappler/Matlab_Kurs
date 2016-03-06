@@ -15,6 +15,8 @@
 % Custom changes:
 \setbeamertemplate{footline}[frame number]{}
 \definecolor{university_tuebingen}{RGB}{165,30,55}
+\definecolor{matlab_input}{RGB}{200,255,200}
+\definecolor{matlab_output}{RGB}{200,200,255}
 \setbeamercolor{frametitle}{fg=university_tuebingen, bg=white}
 \setbeamercolor{title}{fg=university_tuebingen}
 
@@ -34,9 +36,25 @@
 
 % New command for auto increment exercise:
 \newcounter{mexercise}
-%\newcommand{\exercise}{\stepcounter{exercise} Übung \theexercise}
-%\DeclareRobustCommand{\mexercise}{Übung}
-\newcommand{\mexercise}{Übung \themexercise}
+\newcommand{\secMexercise}{\stepcounter{mexercise} \subsection{Übung \themexercise}}
+\newcommand{\frameMexercise}{\frametitle{Übung \themexercise}}
+
+% New command for in text Matlab listing:
+\newcommand{\matlabInput}[1]{\colorbox{matlab_input}{\texttt{#1}}}
+\newcommand{\matlabOutput}[1]{\colorbox{matlab_output}{\texttt{#1}}}
+
+% New command for inserting matlab code and output:
+\newcommand{\insertMatlabCode}[1]{%
+    \begin{columns}[t]%
+      \begin{column}{5cm}%
+        \colorbox{matlab_input}{\lstinputlisting[language=Matlab]{#1.m}}%
+      \end{column}%
+%
+      \begin{column}{5cm}%
+        \colorbox{matlab_output}{\lstinputlisting[language=Matlab]{#1.txt}}%
+      \end{column}%
+    \end{columns}%
+}
 
 
 \author{Prof. Dr. Christiane Zarfl, Dipl.-Inf. Willi Kappler}
