@@ -8,9 +8,34 @@
     \input{../common/title.tex}
 
     \section{Einleitung}
+
+    \subsection{Konventionen}
     \begin{frame}
-      \frametitle{Inhaltsverzeichnis}
-      \tableofcontents[currentsection, hideallsubsections]
+        \frametitle{Verwendete Konventionen 1}
+        \begin{itemize}
+            \item In diesen Kursunterlagen werden die folgenden Konventionen verwendet:
+            \item Eingabetext wird grün hinterlegt, z.B.: \matlabInput{plot}
+            \item Alle Ausgaben werden blau hinterlegt, z.B.: \matlabOutput{a = 12.78}
+            \item Beispielprogramme werden grün hinterlegt mit Zeilennummern abgebildet und die Ausgaben dieser Programme
+            wird blau hinterlegt, z.B.:
+        \end{itemize}
+        \insertMatlabCode{example1.0}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Verwendete Konventionen 2}
+        \begin{itemize}
+            \item Hyperlinks auf Webseiten werden mit blauem Text gekennzeichnet, \\
+            z.B.: \urlLink{http://www.uni-tuebingen.de}{Uni Tübingen - klick mich}
+            \item Menüeinträge werden durch hellgraue Kästen dargestellt, \\
+            z.B.: \menu{Datei > Speichern}
+            \item Tastenkürzel (Shortcuts) und Eingaben werden ebenfalls in hellgrauen Kästen dargestellt, z.B.: \keys{F10}, \keys{\return}, \keys{\ctrl-a}
+            \item Übungsaufgaben werden in einem gelben Kasten abgebildet, z.B.:
+        \end{itemize}
+        \begin{exercise}
+            \sloppy
+            Übung 1: Berechnen Sie die ersten 20 Dezimalziffern der Zahl $\pi$.
+        \end{exercise}
     \end{frame}
 
     \subsection{Warum Matlab ?}
@@ -98,8 +123,8 @@
           \begin{itemize}
             \itemsep0.3cm
             \item Auf Institutshardware bereits vorinstalliert
-            \item ZDV: Matlab \href{https://services.zdv.uni-tuebingen.de/CampusSoftware/}{\beamergotobutton{hier}} herunterladen
-            \item GNU Octave \href{https://www.gnu.org/software/octave/}{\beamergotobutton{Webseite}} (Open Source, aber nicht 100\% compatibel)
+            \item ZDV: Matlab \urlLink{https://services.zdv.uni-tuebingen.de/CampusSoftware/}{herunterladen}
+            \item \urlLink{https://www.gnu.org/software/octave/}{GNU Octave } (Open Source, aber nicht 100\% compatibel)
           \end{itemize}
 
           \item \alert{Auf Institutshardware bitte zuerst ein eigenes Verzeichnis anlegen!}
@@ -113,11 +138,11 @@
 
         \begin{itemize}
           \item ``\emph{Matlab} ist eine kommerzielle Software des Unternehmens \emph{The MathWorks, Inc.} zur Lösung mathematischer Probleme
-          und zur grafischen Darstellung der Ergebnisse.'' (Quelle: \href{https://de.wikipedia.org/wiki/Matlab}{\beamergotobutton{Wikipedia}}).
+          und zur grafischen Darstellung der Ergebnisse.'' (Quelle: \urlLink{https://de.wikipedia.org/wiki/Matlab}{Wikipedia}).
           \item Matlab leitet sich ab von \textbf{MAT}rix \textbf{LAB}oratory.
           \item Wir benutzen Matlab als (nummerische) Programmiersprache.
           \item Wie ein Taschenrechner oder Excel arbeitet Matlab nummerisch (mit Zahlenwerten, also nicht symbolisch wie
-          ein \href{https://de.wikipedia.org/wiki/Computeralgebrasystem}{\beamergotobutton{CAS}}).
+          ein \urlLink{https://de.wikipedia.org/wiki/Computeralgebrasystem}{CAS}).
           \item Anders als bei einem Taschenrechner können Zahlenwerten Variablennamen zugewiesen werden.
           \item Im Programm werden die Variablennamen als Platzhalter für die Werte verwendet.
         \end{itemize}
@@ -172,22 +197,24 @@
 
         \begin{itemize}
           \itemsep0.3cm
-          \item \matlabInput{doc <Befehlsname>} (Info in einem extra Fenster)
-          \item \matlabInput{help <Befehlsname>} (Info im Befehlsfenster)
+          \item \matlabInput{\matlabLink{doc} <Befehlsname>} (Info in einem extra Fenster)
+          \item \matlabInput{\matlabLink{help} <Befehlsname>} (Info im Befehlsfenster)
         \end{itemize}
+
 
         \item Beispiele: Im Prompt eingeben:
 
         \begin{itemize}
           \itemsep0.3cm
-          \item \matlabInput{help sin}
-          \item \matlabInput{help exp}
-          \item \matlabInput{doc plot}
+          \item \matlabInput{help \matlabLink{sin}}
+          \item \matlabInput{help \matlabLink{exp}}
+          \item \matlabInput{doc \matlabLink{plot}}
         \end{itemize}
       \end{itemize}
     \end{frame}
 
     \section{Grundlagen}
+
     \subsection{Einfaches Rechnen}
     \begin{frame}
       \frametitle{Einfaches Rechnen mit Matlab}
@@ -239,18 +266,18 @@
         \item Keine Sonderzeichen (außer Unterstrich)
         \item Max. Zeichenlänge (abhängig vom Computer)
         \item \alert{Vorsicht:} Variablennamen identisch mit Funktionen ist erlaubt, hat aber Seiteneffekte!
-        \item Variablen haben einen bestimmten \textbf{Typ}, z.B. Ganzzahl, Fließkommazahl, Vector, Matrix, ...
+        \item Variablen haben einen bestimmten \textbf{Typ}, z.B. Ganzzahl, Fließ-kommazahl, Vector, Matrix, ...
       \end{itemize}
     \end{frame}
 
     \begin{frame}
       \frametitle{Auflisten und löschen von Variablen}
       \begin{itemize}
-        \item \matlabInput{who}: gibt eine Liste der Variablen im Arbeitsspeicher aus
-        \item \matlabInput{whos}: gibt zusätzliche Information (Typ, Größe, Speicherbedarf)
-        \item \matlabInput{clear <Variable>}: löscht die Variable
-        \item \matlabInput{clear all}: löscht alle Variablen
-        \item \matlabInput{clc}: löscht den Inhalt des Befehlsfensters
+        \item \matlabInput{\matlabLink{who}}: gibt eine Liste der Variablen im Arbeitsspeicher aus
+        \item \matlabInput{\matlabLink{whos}}: gibt zusätzliche Information (Typ, Größe, Speicherbedarf)
+        \item \matlabInput{\matlabLink{clear} <Variable>}: löscht die Variable
+        \item \matlabInput{\matlabLink{clear} all}: löscht alle Variablen
+        \item \matlabInput{\matlabLink{clc}}: löscht den Inhalt des Befehlsfensters
       \end{itemize}
     \end{frame}
 
@@ -258,6 +285,7 @@
     \begin{frame}
       \frameMexercise
       \begin{exercise}
+          \sloppy
           Geben Sie nacheinander folgende Anweisungen ein. Überlegen Sie vorher was wird Matlab ausgeben? \\ \\
           \texttt{u = 2,v = 5;} \keys{\return}\\
           \texttt{(u+6)/4} \keys{\return}\\
@@ -266,132 +294,227 @@
           Welche der folgenden Variablennamen sind \textbf{nicht} zulässig? \\ \\
           \texttt{anzahl}, \texttt{Summe\_a+b}, \texttt{5\_Tageskarte}, \texttt{dauer\_phase3}, \texttt{sin}
       \end{exercise}
-  \end{frame}
+    \end{frame}
 
-  \subsection{Funktionen}
-  \begin{frame}
-    \frametitle{Einfache Funktionen}
-    \begin{itemize}
-      \item Es gibt in Matlab bereits ``eingebaute'' Funktionen (viel mehr als im Taschenrechner und Excel).
-      \item Z.B. die Wurzelfunktion (square root): \matlabInput{a = sqrt(2)/2}
-      \item Nähere Informationen zur Funktion \matlabInput{sqrt} erhält man mit \matlabInput{help sqrt}.
-      \item Funktionen können keinen, einen oder mehrere \textbf{Eingabeparameter} haben.
-      \item Funktionen können keinen, einen oder mehrere \textbf{Rückgabewerte} haben.
-      \item Wie bei Variablen auch haben Funktionen einen bestimmten Typ. D.h. die Ein- und Ausgabewerte \textbf{müssen} vom Typ her passen.
-    \end{itemize}
-  \end{frame}
+    \subsection{Funktionen}
+    \begin{frame}
+        \frametitle{Einfache Funktionen}
+        \begin{itemize}
+          \item Es gibt in Matlab bereits ``eingebaute'' Funktionen (viel mehr als im Taschenrechner und Excel).
+          \item Z.B. die Wurzelfunktion (square root): \matlabInput{a = \matlabLink{sqrt}(2)/2}
+          \item Nähere Informationen zur Funktion \matlabInput{\matlabLink{sqrt}} erhält man mit \matlabInput{help \matlabLink{sqrt}}.
+          \item Funktionen können keinen, einen oder mehrere \textbf{Eingabeparameter} haben.
+          \item Funktionen können keinen, einen oder mehrere \textbf{Rückgabewerte} haben.
+          \item Wie bei Variablen auch haben Funktionen einen bestimmten Typ. D.h. die Ein- und Ausgabewerte \textbf{müssen} vom Typ her passen.
+        \end{itemize}
+      \end{frame}
 
-  \secMexercise
-  \begin{frame}
-    \frameMexercise
-    \begin{exercise}
-        Berechnen Sie den natürlichen Logarithmus von \texttt{1.36} \\ \\
-        Berechnen Sie auch den Logarithmus zur Basis \texttt{10} von \texttt{1.36} \\ \\
-        (Zusatz: Wie berechnen Sie den Logartihmus zur Basis \texttt{3} von \texttt{1.36}?)
-    \end{exercise}
-\end{frame}
+      \secMexercise
+      \begin{frame}
+        \frameMexercise
+        \begin{exercise}
+            \sloppy
+            Berechnen Sie den natürlichen Logarithmus von \texttt{1.36} \\ \\
+            Berechnen Sie auch den Logarithmus zur Basis \texttt{10} von \texttt{1.36} \\ \\
+            (Zusatz: Wie berechnen Sie den Logartihmus zur Basis \texttt{3} von \texttt{1.36}?)
+        \end{exercise}
+    \end{frame}
 
-\secMexercise
-\begin{frame}
-  \frameMexercise
-  \begin{exercise}
-      Berechnen Sie \texttt{cos($\pi$)} und \texttt{cos($\pi / 2$)} \\ \\
-      $\pi$ ist in Matlab bereits eingebaut und wird mit \texttt{pi} bezeichnet \\ \\
-      \alert{Vorsicht}: Das Argument der trigonometrischen Funktionen (\texttt{sin, cos, tan, cot}) wird von Matlab immer im \textbf{Bogenmaß} interpretiert \\ \\
-      Berechnen Sie den Kosinus von \texttt{180$^{\circ}$} und \texttt{90$^{\circ}$}
-  \end{exercise}
-\end{frame}
+    \secMexercise
+    \begin{frame}
+      \frameMexercise
+      \begin{exercise}
+          \sloppy
+          Berechnen Sie \texttt{cos($\pi$)} und \texttt{cos($\pi / 2$)} \\ \\
+          $\pi$ ist in Matlab bereits eingebaut und wird mit \texttt{pi} bezeichnet \\ \\
+          \alert{Vorsicht}: Das Argument der trigonometrischen Funktionen (\texttt{sin, cos, tan, cot}) wird von Matlab immer im \textbf{Bogenmaß} interpretiert \\ \\
+          Berechnen Sie den Kosinus von \texttt{180$^{\circ}$} und \texttt{90$^{\circ}$}
+      \end{exercise}
+    \end{frame}
 
-\section{Zahlen, Vektoren und Matrizen}
-\subsection{Generelles}
-\begin{frame}
-  \frametitle{Zahlen, Vektoren und Matrizen in Matlab}
-  \begin{itemize}
-      \item Eine Gruppierung von mehreren Zahlenwerten nennt man einen \textbf{Vektor}
-      \item Eine zweidimensionale Gruppierung von Zahlen nennt man eine \textbf{Matrix}
-      \item \textbf{Es folgt}: Eine Zahl ist sowohl ein spezieller Vektor (der Länge \texttt{1}), als auch eine spezielle Matrix der Dimension \texttt{1$\times$1}.
-      \item \textbf{Ein Vektor der Länge n} ist eine spezielle Matrix der Dimension \texttt{n$\times$1} (Spaltenvektor) oder \texttt{1$\times$n} (Zeilenvektor)
-      \item Matlab (\textbf{MAT}rix \textbf{LAB}oratory) kennt intern nur Matrizen!
-      \item Die Berechnung der Wurzel in Matlab von vorhin: \\
-      \matlabInput{a = sqrt(2)/2} \\
-      Hier ist \texttt{a} eine \texttt{1$\times$1} Matrix (Selbst die Konstante \texttt{2} wird als eine konstante \texttt{1$\times$1} Matrix interpretiert)
-  \end{itemize}
-\end{frame}
+    \section{Zahlen, Vektoren und Matrizen}
 
-\begin{frame}
-  \frametitle{Eingabe von Vektoren}
+    \subsection{Generelles}
+    \begin{frame}
+      \frametitle{Zahlen, Vektoren und Matrizen in Matlab}
+      \begin{itemize}
+          \item Eine Gruppierung von mehreren Zahlenwerten nennt man einen \textbf{Vektor}
+          \item Eine zweidimensionale Gruppierung von Zahlen nennt man eine \textbf{Matrix}
+          \item \textbf{Es folgt}: Eine Zahl ist sowohl ein spezieller Vektor (der Länge \texttt{1}), als auch eine spezielle Matrix der Dimension \texttt{1$\times$1}.
+          \item \textbf{Ein Vektor der Länge n} ist eine spezielle Matrix der Dimension \texttt{n$\times$1} (Spaltenvektor) oder \texttt{1$\times$n} (Zeilenvektor)
+          \item Matlab (\textbf{MAT}rix \textbf{LAB}oratory) kennt intern nur Matrizen!
+          \item Die Berechnung der Wurzel in Matlab von vorhin: \\
+          \matlabInput{a = \matlabLink{sqrt}(2)/2} \\
+          Hier ist \texttt{a} eine \texttt{1$\times$1} Matrix (Selbst die Konstante \texttt{2} wird als eine konstante \texttt{1$\times$1} Matrix interpretiert)
+      \end{itemize}
+    \end{frame}
 
-  \vspace{-0.5cm}
+    \begin{frame}
+      \frametitle{Eingabe von Vektoren}
 
-  \begin{itemize}
-      \item Vektoren werden in Matlab immer in eckigen Klammern eingegeben: ``['' und ``]''
-      \item Die Elemente des Vektors sind durch Leerzeichen (oder ein Komma) zu trennen
-      (es ergibt sich ein Zeilenvektor, Semikolon als Trenner ergibt einen Spaltenvektor).
-      \item Um in Matlab Tipparbeit zu sparen können Vektoren verwendet werden.
-      Möchte man z.B. die Quadratwurzel mehrerer Werte berechnen, so geht man folgendermaßen vor:
-      \item Zeilenvektor in einer Variablen definieren: \matlabInput{x = [0 2 4 6 8 10]}.
-      \item Die Quadratwurzelfunktion auf den gerade definierten Zeilenvektor \matlabInput{x} anwenden: \matlabInput{y = sqrt(x)}.
-      \item Das Ergebnis in der Variablen \matlabInput{y} ist nun ebenfalls ein Zeilenvektor und enthält die einzelnen
-      Quadratwurzeln der oben aufgeführten Zahlen.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Elemente von Vektoren}
-  \begin{itemize}
-      \item Auf die Elemente eines Vektors wird mit der runden Klammer zugegriffen ``()''. Z.B. \matlabInput{x(3)}
-      gibt das dritte Element von \matlabInput{x} zurück.
-      \item Mit dem Doppelpunkt-Operator \matlabInput{:} können in Matlab Zahlenfolgen als Vektoren definiert werden. Z.B. kann man
-      \matlabInput{x = [0 2 4 6 8 10 12]} kürzer schreiben als \matlabInput{x = 0:2:12}.
-      \item Die generelle Syntax lautet: \matlabInput{Startwert:Schrittweite:Endwert} oder \matlabInput{Startwert:Endwert} mit Schrittweite \matlabInput{1}.
-      \item Schrittweiten dürfen auch negativ sein: \matlabInput{u = 29:-2:0}
-  \end{itemize}
-\end{frame}
-
-\secMexercise
-\begin{frame}
-  \frameMexercise
-  \begin{exercise}
-      Erzeugen Sie einen Vektor \matlabInput{y}, der die Funktionswerte des natürlichen Logarithmus an den Stellen
-      \matlabInput{x = 1,3,5,7,9} enthält. \\ \\
-
-      Was gibt Matlab aus, wenn Sie \matlabInput{y(1)} eingeben?
-  \end{exercise}
-\end{frame}
-
-\secMexercise
-\begin{frame}
-  \frameMexercise
-  \begin{exercise}
-      Geben Sie die Vektoren \matlabInput{a} und \matlabInput{b} mit den Elementen \\
-      \matlabInput{–10,-8,-6,...,6,8,10} bzw. \matlabInput{10,9,8,...0} mit kurzen Anweisungen ein.
-      \alert{Tipp}: \matlabInput{help colon} \\ \\
-
-      Sei \matlabInput{x = [1 3 -2 6 0 7 11 -8 -5]}. Finden Sie mit \\
-      \matlabInput{help paren} und \matlabInput{help colon} heraus, wie man aus \matlabInput{x} einen Vektor bildet, der
+      \vspace{-0.5cm}
 
       \begin{itemize}
-          \item das 1., 4. und 9. Element von \matlabInput{x} enthält
-          \item aus den ersten 4 Elementen von \matlabInput{x} besteht
-          \item jedes zweite Element von \matlabInput{x} enthält.
+          \item Vektoren werden in Matlab immer in eckigen Klammern eingegeben: ``['' und ``]''
+          \item Die Elemente des Vektors sind durch Leerzeichen (oder ein Komma) zu trennen
+          (es ergibt sich ein Zeilenvektor, Semikolon als Trenner ergibt einen Spaltenvektor).
+          \item Um in Matlab Tipparbeit zu sparen können Vektoren verwendet werden.
+          Möchte man z.B. die Quadratwurzel mehrerer Werte berechnen, so geht man folgendermaßen vor:
+          \item Zeilenvektor in einer Variablen definieren: \matlabInput{x = [0 2 4 6 8 10]}.
+          \item Die Quadratwurzelfunktion auf den gerade definierten Zeilenvektor \matlabInput{x} anwenden: \matlabInput{y = sqrt(x)}.
+          \item Das Ergebnis in der Variablen \matlabInput{y} ist nun ebenfalls ein Zeilenvektor und enthält die einzelnen
+          Quadratwurzeln der oben aufgeführten Zahlen.
       \end{itemize}
-  \end{exercise}
-\end{frame}
+    \end{frame}
 
-\begin{frame}
-  \frametitle{Elementweises Rechnen mit Vektoren}
-  \begin{itemize}
-      \item Vektoraddition (-subtraktion) und die Multiplikation (Division) eines Vektors mit einem Skalar sind elementweise definiert durch:
-      \item \matlabInput{w = [1 2 3]*2}: Jedes Element des  Vektors \matlabInput{[1 2 3]} wird mit \matlabInput{2} multipliziert und
-      in der Variable \matlabInput{w} gespeichert.
-      \item \matlabInput{[2 -1 9] + [1 3 6]} ergibt den Vektor \matlabOutput{[3 2 15]}
-      \item \alert{Achtung}: Es können nur Vektoren (Matrizen) mit gleichen Dimensionen addiert oder subtrahiert werden!
-      \item Die elementweise Addition (Subtraktion) eines Vektors mit einem Skalar ist zulässig, z.B.: \matlabInput{[2 5 7] + 3},
-      ergibt \matlabOutput{[5 8 10]}
-  \end{itemize}
-\end{frame}
+    \begin{frame}
+      \frametitle{Elemente von Vektoren}
+      \begin{itemize}
+          \item Auf die Elemente eines Vektors wird mit der runden Klammer zugegriffen ``()''. Z.B. \matlabInput{x(3)}
+          gibt das dritte Element von \matlabInput{x} zurück.
+          \item Mit dem Doppelpunkt-Operator \matlabInput{:} (auch \matlabInput{\matlabLink{colon}} genannt) können in Matlab Zahlenfolgen als Vektoren definiert werden. Z.B. kann man
+          \matlabInput{x = [0 2 4 6 8 10 12]} kürzer schreiben als \matlabInput{x = 0:2:12}.
+          \item Die generelle Syntax lautet: \matlabInput{Startwert:Schrittweite:Endwert} oder \matlabInput{Startwert:Endwert} mit Schrittweite \matlabInput{1}.
+          \item Schrittweiten dürfen auch negativ sein: \matlabInput{u = 29:-2:0}
+      \end{itemize}
+    \end{frame}
 
+    \secMexercise
+    \begin{frame}
+      \frameMexercise
+      \begin{exercise}
+          \sloppy
+          Erzeugen Sie einen Vektor \matlabInput{y}, der die Funktionswerte des natürlichen Logarithmus an den Stellen
+          \matlabInput{x = 1,3,5,7,9} enthält. \\ \\
 
+          Was gibt Matlab aus, wenn Sie \matlabInput{y(1)} eingeben?
+      \end{exercise}
+    \end{frame}
 
+    \secMexercise
+    \begin{frame}
+      \frameMexercise
+      \begin{exercise}
+          \sloppy
+          Geben Sie die Vektoren \matlabInput{a} und \matlabInput{b} mit den Elementen
+          \matlabInput{–10,-8,-6,...,6,8,10} bzw. \matlabInput{10,9,8,...0} mit kurzen Anweisungen ein.
+          \alert{Tipp}: \matlabInput{help colon} \\ \\
+
+          Sei \matlabInput{x = [1 3 -2 6 0 7 11 -8 -5]}. Finden Sie mit
+          \matlabInput{help paren} und \matlabInput{help colon} heraus, wie man aus \matlabInput{x} einen Vektor bildet, der
+
+          \begin{itemize}
+              \item das 1., 4. und 9. Element von \matlabInput{x} enthält
+              \item aus den ersten 4 Elementen von \matlabInput{x} besteht
+              \item jedes zweite Element von \matlabInput{x} enthält.
+          \end{itemize}
+      \end{exercise}
+    \end{frame}
+
+    \subsection{Elementweises Rechnen}
+    \begin{frame}
+      \frametitle{Elementweises Rechnen mit Vektoren}
+      \begin{itemize}
+          \item Vektoraddition (-subtraktion) und die Multiplikation (Division) eines Vektors mit einem Skalar sind elementweise definiert durch:
+          \item \matlabInput{w = [1 2 3]*2}: Jedes Element des  Vektors \matlabInput{[1 2 3]} wird mit \matlabInput{2} multipliziert und
+          in der Variable \matlabInput{w} gespeichert.
+          \item \matlabInput{[2 -1 9] + [1 3 6]} ergibt den Vektor \matlabOutput{[3 2 15]}
+          \item \alert{Achtung}: Es können nur Vektoren (Matrizen) mit gleichen Dimensionen addiert oder subtrahiert werden!
+          \item Die elementweise Addition (Subtraktion) eines Vektors mit einem Skalar ist zulässig, z.B.: \matlabInput{[2 5 7] + 3},
+          ergibt \matlabOutput{[5 8 10]}
+      \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+      \frametitle{Elementweises Rechnen mit Vektoren2}
+      \begin{itemize}
+          \item Elementweise Multiplikation, Division und Potenzieren bedarf einem extra Operator in Matlab (``Punktoperationen'')
+          \item Gegeben seien \matlabInput{a = 1:2:10; b = 1:5;}
+          \item Elementweise Multiplikation von a und b: \matlabInput{a.*b}, ergibt hier: \matlabOutput{[1 6 15 28 45]}
+          \item Elementweise Division: \matlabInput{a./b}
+          \item Elementweises Potenzieren: \matlabInput{a.\string^2}
+          \item \alert{Vorsicht}:
+          \begin{itemize}
+              \item \matlabInput{a} und \matlabInput{b} müssen gleiche Dimension haben!
+              \item \matlabInput{a.*b} und \matlabInput{a*b} sind ein großer Unterschied!
+          \end{itemize}
+      \end{itemize}
+    \end{frame}
+
+    \subsection{Multiplikation von Vektoren}
+
+    \begin{frame}
+      \frametitle{Multiplikation von Vektoren}
+      \begin{itemize}
+          \item Der Stern (Asterisk, \matlabInput{*}) in Matlab definiert die übliche Vektormultiplikation
+          \item \matlabInput{a*b} ergibt somit einen Fehler, weil die Dimensionen von \matlabInput{a} und \matlabInput{b}
+          \texttt{5$\times$1} ist und diese nicht sinnvoll als Vektoren multipliziert werden können
+          \item Das Apostroph \matlabInput{`} transponiert einen Vektor (oder eine Matrix), \matlabInput{a`} ist also ein Vektor
+          der Dimension \texttt{1$\times$5}
+          \item Mit diesem Wissen zurück zur Multiplikation:
+          \item \matlabInput{a*b`} ergibt das Skalarprodukt von \matlabInput{a} und \matlabInput{b}
+          \item \matlabInput{a`*b}, ergibt das dyadische Produkt (\texttt{5$\times$5} Matrix)
+      \end{itemize}
+    \end{frame}
+
+    \secMexercise
+    \begin{frame}
+      \frameMexercise
+      \begin{exercise}
+          \sloppy
+          Gegeben seien \matlabInput{a = [1 4 6]} und \matlabInput{b = [-1 2 1]}\\ \\
+
+          Was gibt Matlab aus, wenn Sie die folgenden Anweisungen eingeben (geben Sie die Antwort, \textbf{bevor} Sie mit Matlab rechnen!):\\ \\
+
+          \matlabInput{a+b, a*2,a/2, a+3, a*b, a.*b, a./b, a*b`, a`*b}
+      \end{exercise}
+    \end{frame}
+
+    \secMexercise
+    \begin{frame}
+      \frameMexercise
+      \begin{exercise}
+          \sloppy
+          Sie möchten einen Vektor \matlabInput{x} mit den Elementen \matlabInput{0, 0.2$\pi$, 0.4$\pi$ ...,10$\pi$} definieren.
+          Dazu können Sie zum Beispiel die elementweise Multiplikation mit \matlabInput{$\pi$} verwenden. Welche Möglichkeiten gibt es? \\ \\
+
+          Wie würde Matlab die Anweisung \matlabInput{y = [0:0.2:10*pi]} interpretieren?
+      \end{exercise}
+    \end{frame}
+
+    \section{Finally}
+
+    \subsection{Fazit}
+    \begin{frame}
+      \frametitle{Vorteile und Fallstricke}
+      \begin{itemize}
+          \item Vorteile:
+          \begin{itemize}
+              \item Matlab kennt eine große Anzahl an nützlichen Funktionen und Algorithmen (siehe \matlabInput{\matlabLink{doc}})
+              \item Rechnen mit Variablen als Platzhaltern ermöglicht einfache Darstellung (Lesbarkeit)
+              \item ...
+          \end{itemize}
+          \item Fallstricke:
+          \begin{itemize}
+              \item Sequentiell arbeitendes Programm, d.h. Matlab arbeitet Zeile für Zeile. Eine Variable muss erst definiert werden,
+              bevor man sie benutzen kann. Ändert man den Wert einer Variable, müssen alle Operationen mit dieser Variable wiederholt werden.
+              \item Matlab ist ``amerikanisch''
+              \begin{itemize}
+                  \item Dezimalpunkt statt -komma
+                  \item (Standard-)Funktionen haben englische Namen (z.B. ``\matlabInput{\matlabLink{sqrt}}'')
+              \end{itemize}
+              \item ...
+          \end{itemize}
+      \end{itemize}
+    \end{frame}
+
+    \subsection{Ausblick}
+    \begin{frame}
+      \frametitle{Ausblick}
+      \begin{itemize}
+          \item Wie kann ich mehrere Rechenschritte/Matlab-Befehle, die ich immer wieder benötige, ``speichern'' und zusammenfassen?
+          \item Wie kann ich Ergebnisse von Berechnungen grafisch darstellen?
+      \end{itemize}
+    \end{frame}
 
 \end{document}
