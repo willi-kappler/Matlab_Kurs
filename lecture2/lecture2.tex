@@ -2,25 +2,53 @@
 
 \title{\input{../common/title.txt}\\{\scriptsize 2. Der Editor und Grafikplots}}
 
+% Rechtschreibprüfung mit: aspell -l de -t --tex-check-comments -c lecture2/lecture2.tex
+
+\setcounter{mexercise}{0}
+
 \begin{document}
   \input{../common/title.tex}
 
     \section{Einleitung}
+
+    \subsection{Motivation}
     \begin{frame}
-        \frametitle{Inhaltsverzeichnis}
-        \tableofcontents[currentsection]
+        \frametitle{Sie wissen bereits...}
+        \begin{itemize}
+            \item wie Sie in Matlab Variablen definieren und damit Werte wiederverwenden können.
+            \item wie Sie in Matlab mit Vektoren rechnen und damit effizient auch große Datenmengen verarbeiten können.
+        \end{itemize}
+
+        \vspace{0.3cm}
+
+        Wie kann man mehrere Rechenschritte/Matlab-Befehle, die häufig benötigt werden, ``speichern'' und zusammenfassen? \\
+
+        \vspace{0.3cm}
+
+        Nach diesem zweiten Block... \\
+
+        \vspace{0.3cm}
+
+        \begin{itemize}
+            \item können Sie eigene Script Files erstellen (Bsp. 1D-Stofftransport- gleichung)
+            \item können Sie x-y Plots erstellen, bearbeiten und speichern.
+        \end{itemize}
     \end{frame}
 
-    \section{Part 1}
-    \begin{frame}
-        \frametitle{This is the first slide}
-        Text
-    \end{frame}
 
-    \section{Part 2}
+    \subsection{Script Files}
     \begin{frame}
-        \frametitle{This is the second slide}
-        \framesubtitle{A bit more information about this}
-        Text
-    \end{frame}
+        \frametitle{Programme Schreiben mit Matlab - Script Files}
+        \begin{itemize}
+            \item Matlab ist mehr als nur ein Taschenrechner
+            \item Ein Script-File ist eine Aneinanderreihung von Matlab-Befehlen
+            \item Matlab-Scripts haben die Dateiendung ``\texttt{.m}''
+            \item Bsp.: Ihr Programm heißt \texttt{MeinScript.m} und befindet sich im Verzeichnis \texttt{MyDocuments\textbackslash ich\textbackslash Matlab}
+            \item Dieser Pfad muss das gegenwärtige \textbf{Arbeitsverzeichnis} von Matlab sein
+            \item Dann führt der Befehl \matlabInput{MeinScript} (ohne Dateiendung) im ``Command Window'' den Inhalt des Scriptes aus
+            \item Dateinamen dürfen keine Sonderzeichen oder Leerzeichen enthalten und auch nicht mit Ziffern anfangen
+            \item Script Files/Programme können mit jedem Texteditor oder mit dem Matlab-eigenen Editor erstellt werden
+          \end{itemize}
+      \end{frame}
+
 \end{document}
