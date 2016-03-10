@@ -36,8 +36,9 @@
 
 % New command for auto increment exercise:
 \newcounter{mexercise}
-\newcommand{\secMexercise}{\stepcounter{mexercise} \subsection{Übung \themexercise}}
-\newcommand{\frameMexercise}{\frametitle{Übung \themexercise}}
+\newcounter{mchapter}
+\newcommand{\secMexercise}{\stepcounter{mexercise} \subsection{Übung \themchapter -\themexercise}}
+\newcommand{\frameMexercise}{\frametitle{Übung \themchapter -\themexercise}}
 
 % New command for in text Matlab listing:
 \newcommand{\matlabInput}[1]{\colorbox{matlab_input}{\texttt{#1}}}
@@ -52,6 +53,18 @@
 %
       \begin{column}{5cm}%
         \colorbox{matlab_output}{\lstinputlisting[language=Matlab]{#1.txt}}%
+      \end{column}%
+    \end{columns}%
+}
+
+\newcommand{\insertMatlabCodePlot}[1]{%
+    \begin{columns}[t]%
+      \begin{column}{5cm}%
+        \colorbox{matlab_input}{\lstinputlisting[language=Matlab]{#1.m}}%
+      \end{column}%
+%
+      \begin{column}{5cm}%
+        \includegraphics[width=5.0cm]{#1.png}
       \end{column}%
     \end{columns}%
 }

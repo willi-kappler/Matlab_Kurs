@@ -1,12 +1,12 @@
 import os
 
-env = Environment(ENV = os.environ, tools = ["default", compile_matlab_code])
+env = Environment(ENV = os.environ, tools = ["default", compile_matlab_code, generate_matlab_plot])
 
 matlab_examples = []
 
-for name in ["2.1", "2.1"]:
+for name in ["2_1"]:
     filename = "example{0:s}".format(name)
-    env.MATLAB(filename)
+    env.MATLAB_PLOT(filename)
     matlab_examples.append(filename + ".m")
 
 env.Depends("lecture2.pdf", matlab_examples)
