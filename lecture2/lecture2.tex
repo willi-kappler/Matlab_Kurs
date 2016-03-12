@@ -58,7 +58,7 @@
           \begin{itemize}
               \item Legen Sie ein Verzeichnis für die heutige Übung an.
               \item Machen Sie dies zum aktiven Verzeichnis von Matlab.
-              \item Aufruf des Editors vom prompt: \matlabInput{edit dateiname}.
+              \item Aufruf des Editors vom prompt: \matlabInput{\matlabLink{edit} dateiname}.
               \item \alert{Achtung}: Kommentieren Sie \textbf{immer} Ihre Scripte: Kommentare beginnen mit \matlabInput{\%} und enden mit dem Zeilenende.
           \end{itemize}
 
@@ -76,10 +76,10 @@
           \vspace{-0.5cm}
 
           \begin{itemize}
-              \item \matlabInput{plot} trägt numerische Daten gegeneinander auf (\matlabInput{doc \matlabLink{plot}}).
-              \item \matlabInput{plot(x,y)} erzeugt ein Grafikfenster (\texttt{``figure''}) indem die Werte \texttt{y} gegen \texttt{x} aufgetragen sind.
+              \item \matlabInput{\matlabLink{plot}} trägt numerische Daten gegeneinander auf (\matlabInput{doc \matlabLink{plot}}).
+              \item \matlabInput{\matlabLink{plot}(x,y)} erzeugt ein Grafikfenster (\texttt{``figure''}) indem die Werte \texttt{y} gegen \texttt{x} aufgetragen sind.
               \item Beispiel: die Wurzelfunktion im Intervall [0,6] zeichnen:
-              \item \matlabInput{x=0:0.5:6; y=sqrt(x);plot(x,y)}
+              \item \matlabInput{x=0:0.5:6; y=sqrt(x); \matlabLink{plot}(x,y)}
           \end{itemize}
 
           \vspace{-0.3cm}
@@ -154,33 +154,32 @@
           \vspace{-1.0cm}
 
           \begin{itemize}
-              \item Stilparameter in Hochkommata übergeben: \matlabInput{plot(x,c,'k:x');}
+              \item Stilparameter in Hochkommata übergeben: \matlabInput{\matlabLink{plot}(x,c,'k:x');}
               \begin{itemize}
                   \item \matlabInput{k} $\Rightarrow$ schwarz; \matlabInput{:} $\Rightarrow$ gepunktete Linie; \matlabInput{x} $\Rightarrow$ x-Zeichen als Marker.
                   \item Informieren Sie sich mit \matlabInput{doc \matlabLink{plot}} über weitere Stilparameter.
               \end{itemize}
-              \item Achsenbereiche festsetzen: \matlabInput{xlim([minx maxx]); ylim([miny maxy])}
-              \item Achsenbeschriftung: \matlabInput{xlabel('x [m]');} und \matlabInput{ylabel('c [mol/L]');}.
-              \item Titel hinzufügen: \matlabInput{title('Titeltext');}
-              \item Legende hinzufügen: \matlabInput{legend('c');}
-              \item Matlab kennt rudimentäre LaTeX-Syntax für Strings: \matlabInput{xlabel('c [mol/m\string^3]')} ergibt hoch gestellte ``3'',
-              \matlabInput{title('c\_\{cons\}')} ergibt tief gestelltes ``cons''
+              \item Achsenbereiche festsetzen: \matlabInput{\matlabLink{xlim}([minx maxx]); \matlabLink{ylim}([miny maxy])}
+              \item Achsenbeschriftung: \matlabInput{\matlabLink{xlabel}('x [m]');} und \matlabInput{\matlabLink{ylabel}('c [mol/L]');}.
+              \item Titel hinzufügen: \matlabInput{\matlabLink{title}('Titeltext');}
+              \item Legende hinzufügen: \matlabInput{\matlabLink{legend}('c');}
+              \item Matlab kennt rudimentäre LaTeX-Syntax für Strings: \matlabInput{\matlabLink{xlabel}('c [mol/m\string^3]')} ergibt hoch gestellte ``3'',
+              \matlabInput{\matlabLink{title}('c\_\{cons\}')} ergibt tief gestelltes ``cons''
           \end{itemize}
       \end{frame}
 
       \begin{frame}
           \frametitle{Mehrere Graphen in einem Plot, \texttt{figure}}
-
           \begin{itemize}
-              \item Variante 1: mehrere Parameterpärchen übergeben: \matlabInput{plot(t1,c1,'r-',t2,c2,'b:')}
-              \item Variante 2: mit \matlabInput{hold on} in Hinzufügmodus wechseln (und mit \matlabInput{hold off} wieder raus):
+              \item Variante 1: mehrere Parameterpärchen übergeben: \matlabInput{\matlabLink{plot}(t1,c1,'r-',t2,c2,'b:')}
+              \item Variante 2: mit \matlabInput{\matlabLink{hold} on} in Hinzufügmodus wechseln (und mit \matlabInput{\matlabLink{hold} off} wieder raus):
               \begin{itemize}
-                  \item \matlabInput{plot(t1,c1,'r-');}
-                  \item \matlabInput{hold on;plot(t2,c2,‘b:‘);hold off}
+                  \item \matlabInput{\matlabLink{plot}(t1,c1,'r-');}
+                  \item \matlabInput{\matlabLink{hold} on;\matlabLink{plot}(t2,c2,‘b:‘);\matlabLink{hold} off}
               \end{itemize}
-              \item Ein neues Grafikfenster wird mit dem Befehl \matlabInput{figure} erzeugt:
+              \item Ein neues Grafikfenster wird mit dem Befehl \matlabInput{\matlabLink{figure}} erzeugt:
               \begin{itemize}
-                  \item \matlabInput{figure(1)}, erzeugt das Grafikfenster 1
+                  \item \matlabInput{\matlabLink{figure}(1)}, erzeugt das Grafikfenster 1
                   \item Man kann somit zwischen den Grafikfenstern ``springen''.
               \end{itemize}
           \end{itemize}
@@ -207,14 +206,13 @@
       \subsection{Verteilung 2}
       \begin{frame}
           \frametitle{Stufenartige Zugabe der Konzentration}
-
           \begin{itemize}
               \item Konzentrationsverteilung bei stufenartiger Anfangsverteilung:
               \begin{displaymath}
                   c(x,t) = \frac{c_{ini}}{2} erfc \left( \frac{x-vt}{\sqrt{4Dt}} \right)
               \end{displaymath}
               \item \texttt{erfc} ist die komplementäre Fehlerfunktion (in etwa das Integral der Gauß-Funktion)
-              \item Vermutung: könnte in Matlab \matlabInput{erfc} heißen (Testen Sie: \matlabInput{help \matlabLink{erfc}})
+              \item Vermutung: könnte in Matlab \matlabInput{\matlabLink{erfc}} heißen (Testen Sie: \matlabInput{help \matlabLink{erfc}})
           \end{itemize}
       \end{frame}
 
@@ -235,5 +233,73 @@
           \end{exercise}
       \end{frame}
 
+      \subsection{Plots speichern}
+      \begin{frame}
+          \frametitle{Grafikdateien erstellen}
+          \begin{itemize}
+              \item Problem: Sie brauchen für einen Bericht einen guten Plot Ihrer Daten, und zwar genau 9cm breit, 6 cm hoch
+              \item Schon mal mit Excel probiert?
+              \item Matlab-Lösung: Abbildung in Grafikdatei ``drucken'' (siehe \matlabInput{doc \matlabLink{print}})
+              \item \matlabInput{\matlabLink{print} –djpeg100 –r300 my\_plot.jpg}
+              \item \texttt{djpeg100}: Format und Qualität
+              \item \texttt{r300}: Auflösung (DPI)
+              \item \texttt{my\_plot.jpg}: Dateiname
+          \end{itemize}
+      \end{frame}
+
+      \subsection{Ploteigenschaften}
+      \begin{frame}
+          \frametitle{Ploteigenschaften}
+          \begin{itemize}
+              \item Die Größe der Grafik ist eine Eigenschaft der Abbildung:
+              \item \matlabInput{\matlabLink{set}(gcf, 'paperunits', 'centimeters',} \matlabInput{'paperposition', [1 1 9 6])}
+              \item \matlabInput{\matlabLink{set}}: verändere eine Eigenschaft
+              \item \matlabInput{\matlabLink{gcf}}: ``get current figure'' = handle auf die aktuelle Abbildung
+              \item Eigenschaft ``paperposition'': Koordinaten der linken unteren Ecke auf dem Papier, Breite, Höhe
+              \item Abfrage einer Eigenschaft: \matlabInput{\matlabLink{get}(\matlabLink{gcf}, 'paperposition')}
+          \end{itemize}
+      \end{frame}
+
+      \begin{frame}
+          \frametitle{Weitere Stilparameter}
+          \begin{itemize}
+              \item \matlabInput{\matlabLink{gca}}: ``get current axis'' = handle auf die aktuelle Achse
+              \item Einige Achseneigenschaften:
+              \begin{itemize}
+                  \item \texttt{'linewidth'}
+                  \item \texttt{'fontsize'}
+                  \item \texttt{'xgrid'}, \texttt{'ygrid'} (Wert \texttt{'on'} oder \texttt{'off'})
+                  \item \texttt{'xscale'}, \texttt{'yscale'} (Wert \texttt{'linear'} oder \texttt{'log'})
+                  \item \texttt{'position'} (Position innerhalb der Abbildung)
+              \end{itemize}
+              \item \matlabInput{\matlabLink{gco}}: ``get current object'' = handle auf das aktuelle Objekt, z.B. die Linie der Grafik
+          \end{itemize}
+      \end{frame}
+
+      \begin{frame}
+          \frametitle{Mehrere Unterabbildungen}
+          \begin{itemize}
+              \item \matlabInput{\matlabLink{subplot}(2,2,1)}: unterteile Abbildung in 2$\times$2 Unterabbildungen nehme die erste als aktive Abbildung
+              \item \matlabInput{\matlabLink{subplot}(2,2,2)}: nehme die zweite Unterabbildunge als aktive Abbildung
+              \item Matlab erzeugt dann mehrere Achsen, die jeweils ``Kinder'' der Abbildung sind
+          \end{itemize}
+      \end{frame}
+
+      \subsection{Ausblick}
+      \begin{frame}
+        \frametitle{Ausblick}
+        \begin{itemize}
+            \item \textbf{Hausaufgaben zur Vertiefung}:
+            \begin{itemize}
+                \item Sie können verschiedene Rechnungen mit Matlab ausführen und kennen die Funktionsweise der in Matlab implementierten Funktionen.
+                \item Sie können Funktionen in 2D-Grafiken darstellen.
+            \end{itemize}
+            \item \textbf{Nächste Kurseinheit - noch eine Dimension}:
+            \begin{itemize}
+                \item Rechnen mit Matrizen
+                \item verschiedene 3D-Darstellungen
+            \end{itemize}
+        \end{itemize}
+      \end{frame}
 
 \end{document}
