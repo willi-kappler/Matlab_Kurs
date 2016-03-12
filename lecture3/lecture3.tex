@@ -141,5 +141,63 @@
         \end{itemize}
     \end{frame}
 
+    \secMexercise
+    \begin{frame}
+        \frameMexercise
+        \begin{exercise}
+            \sloppy
+            Geben Sie folgende Matrix ein:\\
+            \begin{displaymath}
+                A =
+                \begin{pmatrix}
+                    1 & 3 & 5 \\
+                    2 & 0 & 1 \\
+                    2 & 4 & 6
+                \end{pmatrix}
+            \end{displaymath}
+             Was ist das Ergebnis der folgenden Anweisungen? (Überlegen Sie, bevor Sie mit Matlab rechnen.) \\
+
+             \begin{columns}[t]
+               \begin{column}{5cm}
+                 \texttt{B=A'} \keys{\return} \\
+                 \texttt{A(1,:)} \keys{\return} \\
+                 \texttt{A(:,3)} \keys{\return} \\
+                 \texttt{A(2,2)} \keys{\return} \\
+               \end{column}
+               \begin{column}{5cm}
+                   \texttt{B(2,2)} \keys{\return} \\
+                   \texttt{B(3,2)} \keys{\return} \\
+                   \texttt{size(A), size(B)} \keys{\return}
+               \end{column}
+             \end{columns}
+        \end{exercise}
+    \end{frame}
+
+    \secMexercise
+    \begin{frame}
+        \frameMexercise
+        \begin{exercise}
+            \sloppy
+            Ersetzen Sie in einer 3$\times$4 Matrix $B$ mit Zufallszahlen das erste Element in der ersten Zeile durch 0 und
+            streichen Sie die gesamte zweite Spalte von $B$.
+        \end{exercise}
+    \end{frame}
+
+    \secMexercise
+    \begin{frame}
+        \frameMexercise
+        \begin{exercise}
+            \sloppy
+            Erzeugen Sie eine 2$\times$5 Matrix $A$ mit Zufallszahlen. Bilden Sie daraus:\\
+            \begin{enumerate}
+                \item eine Matrix $B$, die aus den ersten drei Spalten von $A$ besteht
+                \item eine Matrix $C$, die aus der zweiten und vierten Spalte von $A$ besteht
+            \end{enumerate}
+
+            \vspace{0.5cm}
+
+            Finden Sie die dazu nötigen Anweisungen mit \texttt{help colon} und \texttt{help paren} selbst heraus.
+        \end{exercise}
+    \end{frame}
 
 \end{document}
