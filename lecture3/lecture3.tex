@@ -1,8 +1,8 @@
 \input{../common/header.tex}
 
-\title{\input{../common/title.txt}\\{\scriptsize 2. Der Editor und Grafikplots}}
+\title{\input{../common/title.txt}\\{\scriptsize 3. Matrizen}}
 
-% Rechtschreibprüfung mit: aspell -l de -t --tex-check-comments -c lecture2/lecture2.tex
+% Rechtschreibprüfung mit: aspell -l de -t --tex-check-comments -c lecture3/lecture3.tex
 
 \setcounter{mchapter}{3}
 \setcounter{mexercise}{0}
@@ -67,18 +67,18 @@
         \begin{itemize}
             \item In Matrix-Vektor Schreibweise: $Ax = b$, Formales Lösen: $x = A^{-1}b$
             \item Definition von Matrix $A$ in Matlab:
-            \item \matlabInput{A=[3,4,-2; -1,2,8; 2,0,-5];}, Semikolon in eckiger Klammer: neue Zeile
+            \item \matlabInput{A = [3,4,-2; -1,2,8; 2,0,-5];}, Semikolon in eckiger Klammer: neue Zeile
             \item Definition von Spaltenvektor b in Matlab:
-            \item \matlabInput{b=[4; -1; 3];}, Semikolon in eckiger Klammer: neue Zeile
+            \item \matlabInput{b = [4; -1; 3];}, Semikolon in eckiger Klammer: neue Zeile
         \end{itemize}
     \end{frame}
 
     \begin{frame}
         \frametitle{LGS Fortsetzung}
         \begin{itemize}
-            \item Invertieren der Matrix $A$ mit \matlabInput{\matlabLink{inv}(A)}: \matlabInput{x=\matlabLink{inv}(A)*b}
+            \item Invertieren der Matrix $A$ mit \matlabInput{\matlabLink{inv}(A)}: \matlabInput{x = \matlabLink{inv}(A)*b}
             \item Das Invertieren einer Matrix ist ``numerisch teurer'' als das Lösen eines einzelnen Gleichungssystems
-            \item Hierfür hat Matlab den Backslash: \matlabInput{x = A \string\ b}: bedeutet ``löse $Ax=b$ nach $x$''
+            \item Hierfür hat Matlab den Backslash: \matlabInput{x = A \string\ b}: bedeutet ``löse $Ax = b$ nach $x$''
         \end{itemize}
     \end{frame}
 
@@ -89,8 +89,8 @@
             \item Transponieren = Vertauschen von Zeilen und Spalten
             \item Wird in Matlab mit einem Apostroph hinter der Variable durchgeführt
             \item Bsp.: Definiere b als Zeilenvektor und wandle es in Spaltenvektor um:
-            \item \matlabInput{b=[4, -1, 3]; b=b'}, (Ein Gleichheitszeichen ist eine Zuweisung)
-            \item \alert{Achtung!} Das Gleichungssystem Ax=b kann nur gelöst werden, wenn
+            \item \matlabInput{b = [4, -1, 3]; b = b'}, (Ein Gleichheitszeichen ist eine Zuweisung)
+            \item \alert{Achtung!} Das Gleichungssystem Ax = b kann nur gelöst werden, wenn
             \begin{itemize}
                 \item $A$ eine quadratische, invertierbare Matrix ist (die Determinante ist nicht null oder $A$ hat vollen Rang)
                 \item $b$, ein Spaltenvektor, hat die selbe Zeilenanzahl wie Matrix $A$
@@ -121,7 +121,7 @@
         \begin{itemize}
             \item Eine absolute leere Matrix (keine Zeilen, keine Spalten) kann durch leere eckige Klammern erzeugt werden:
             \begin{itemize}
-                \item \matlabInput{B=[];} erzeugt eine leere Matrix
+                \item \matlabInput{B = [];} erzeugt eine leere Matrix
                 \item \matlabInput{A(:,1) = [ ]} bewirkt, dass die erste Spalte von Matrix A gelöscht wird
             \end{itemize}
             \item \matlabInput{\matlabLink{size}(A)} gibt die Dimension der Matrix wieder. Das Ergebnis ist ein Vektor \matlabOutput{[Zeilenzahl, Spaltenzahl]}
@@ -159,7 +159,7 @@
 
              \begin{columns}[t]
                \begin{column}{5cm}
-                 \texttt{B=A'} \keys{\return} \\
+                 \texttt{B = A'} \keys{\return} \\
                  \texttt{A(1,:)} \keys{\return} \\
                  \texttt{A(:,3)} \keys{\return} \\
                  \texttt{A(2,2)} \keys{\return} \\
@@ -224,10 +224,10 @@
             \item \matlabInput{\matlabLink{inv}(A)} ist die Inverse der Matrix
             \item Ein kleiner Test der Operationen:
             \begin{itemize}
-                \item \matlabInput{A=\matlabLink{rand}(3)}
+                \item \matlabInput{A = \matlabLink{rand}(3)}
                 \item \matlabInput{\matlabLink{det}(A)}
-                \item \matlabInput{e=\matlabLink{eig}(A), \matlabLink{prod}(e)}
-                \item \matlabInput{iA=\matlabLink{inv}(A)}
+                \item \matlabInput{e = \matlabLink{eig}(A), \matlabLink{prod}(e)}
+                \item \matlabInput{iA = \matlabLink{inv}(A)}
                 \item \matlabInput{1/\matlabLink{det}(iA)}
             \end{itemize}
         \end{itemize}
@@ -274,11 +274,13 @@
         \end{exercise}
     \end{frame}
 
+    \section{Visualisierung}
+
     \subsection{Zweidimensionale Funktionen}
     \begin{frame}
         \frametitle{Visualisierung zweidimensionaler Funktionen}
         \begin{itemize}
-            \item Aufgabe: Visualisierung einer Funktion \texttt{z=f(x,y)}, die von zwei Koordinaten abhängt
+            \item Aufgabe: Visualisierung einer Funktion \texttt{z = f(x,y)}, die von zwei Koordinaten abhängt
             \item Beispiel: \texttt{z = x*y}
             \item Herangehensweise:
             \begin{enumerate}
@@ -286,7 +288,71 @@
                 \item Führe elementweise Berechnung von \texttt{z} durch (erzeuge eine Matrix \texttt{Z} mit den z-Werten zu jedem x,y-Paar)
                 \item Plotte die Daten mit speziellen Befehlen
             \end{enumerate}
-            \item In Matlab:
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Fortsetzung}
+        In Matlab:
+        \begin{enumerate}
+            \item Regelmäßiges Gitter:
+            \begin{itemize}
+                \item Erzeuge Vektoren der regelmäßigen x- und y-Werte: \matlabInput{xvec = [-2:1:2]; yvec = [-1:1:1];}
+                \item Erzeuge hieraus ein regelmäßiges Gitter mit \matlabInput{\matlabLink{meshgrid}}: \matlabInput{[X,Y] = \matlabLink{meshgrid}(xvec,yvec);}
+            \end{itemize}
+            \item Jetzt \textit{elementweise} Berechnung: \matlabInput{Z = X.*Y;}
+        \end{enumerate}
+    \end{frame}
+
+    \subsection{Möglichkeiten in 2D und 3D}
+    \begin{frame}
+        \frametitle{Visualisierungsmöglichkeiten}
+        \begin{itemize}
+            \item 3D-Visualisierung als Gitternetz: \matlabInput{\matlabLink{mesh}}
+            \insertMatlabOnlyCode{example3_1}
+            \item 3D-Visualisierung als Oberfläche: \matlabInput{\matlabLink{surf}}
+            \insertMatlabOnlyCode{example3_2}
+            \item Testen Sie, was \matlabInput{\matlabLink{shading} interp} bewirkt
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Fortsetzung}
+        2D-Visualisierung mit Isolinien und -flächen: \matlabInput{\matlabLink{contour}} und \matlabInput{\matlabLink{pcolor}}
+        \begin{itemize}
+            \item Erzeugen einer Karte mit 50 Höhenlinien: z.B.: \matlabInput{contour(X,Y,Z,50);}
+            \item Erzeugen einer Karte mit gefüllten Flächen, die Höhenwerte darstellen: \matlabInput{pcolor(X,Y,Z); shading interp}
+            \item Eine Farblegende gibt es mit \matlabInput{\matlabLink{colorbar}}
+        \end{itemize}
+    \end{frame}
+
+    \secMexercise
+    \begin{frame}
+        \frameMexercise
+        \begin{exercise}
+            \sloppy
+            Stellen Sie die lineare Funktion $z = -0.4x -0.8y + 3$ für $0 \leq x \leq 5$ und $0 \leq y \leq 5$ graphisch dar. \\ \\
+
+            Um welche Art von Fläche handelt es sich?
+        \end{exercise}
+    \end{frame}
+
+    \secMexercise
+    \begin{frame}
+        \frameMexercise
+        \begin{exercise}
+            \sloppy
+            Stellen Sie die Funktion $z = x^{2} + y^{2}$ für $-3 \leq x \leq 3$ und $-3 \leq y \leq 3$ graphisch dar. \\ \\
+            Verwenden Sie \texttt{subplot} um mehrere Darstellungsmöglichkeiten in einer Grafik zu vergleichen
+        \end{exercise}
+    \end{frame}
+
+    \section{Ausblick}
+    \subsection{Ausblick}
+    \begin{frame}
+        \frametitle{Ausblick}
+        \begin{itemize}
+            \item Wie kann ich häufig vorkommende Berechnungen/Abläufe automatisieren?
         \end{itemize}
     \end{frame}
 

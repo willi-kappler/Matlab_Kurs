@@ -30,7 +30,17 @@
 
 % Settings for Matlab syntax highlighting
 % backgroundcolor=\color{yellow},
-\lstset{numbers=left, numberstyle=\tiny, numberblanklines=false, basicstyle=\small}
+\lstset{numbers=left, %
+        numberstyle=\tiny, %
+        numberblanklines=false, %
+        basicstyle=\small\ttfamily, %
+        keywordstyle=\bfseries\color{green!40!black}, %
+        breaklines=true, %
+        commentstyle=\itshape\color{purple!40!black}, %
+        identifierstyle=\color{red}, %
+        language=Matlab, %
+        backgroundcolor=\color{matlab_input}
+        }
 
 % Option for mdframed:
 \newmdenv[backgroundcolor=yellow!30, roundcorner=5pt]{exercise}
@@ -45,23 +55,32 @@
 \newcommand{\matlabInput}[1]{\colorbox{matlab_input}{\texttt{#1}}}
 \newcommand{\matlabOutput}[1]{\colorbox{matlab_output}{\texttt{#1}}}
 
+% New command for inserting only matlab code:
+\newcommand{\insertMatlabOnlyCode}[2][firstline=1]{%
+        \lstinputlisting[#1]{#2.m}%
+}
+
 % New command for inserting matlab code and output:
-\newcommand{\insertMatlabCode}[1]{%
+\newcommand{\insertMatlabCodeOutput}[1]{%
     \begin{columns}[t]%
       \begin{column}{5cm}%
-        \colorbox{matlab_input}{\lstinputlisting[language=Matlab]{#1.m}}%
+        %\colorbox{matlab_input}{\lstinputlisting{#1.m}}%
+        \lstinputlisting{#1.m}%
       \end{column}%
 %
       \begin{column}{5cm}%
-        \colorbox{matlab_output}{\lstinputlisting[language=Matlab]{#1.txt}}%
+        %\colorbox{matlab_output}{\lstinputlisting{#1.txt}}%
+        \lstinputlisting[backgroundcolor=\color{matlab_output}]{#1.txt}%
       \end{column}%
     \end{columns}%
 }
 
+% New command for inserting matlab code and plot:
 \newcommand{\insertMatlabCodePlot}[1]{%
     \begin{columns}[t]%
       \begin{column}{5cm}%
-        \colorbox{matlab_input}{\lstinputlisting[language=Matlab]{#1.m}}%
+        %\colorbox{matlab_input}{\lstinputlisting{#1.m}}%
+        \lstinputlisting{#1.m}%
       \end{column}%
 %
       \begin{column}{5cm}%

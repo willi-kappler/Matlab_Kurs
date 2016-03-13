@@ -2,4 +2,13 @@ import os
 
 env = Environment(ENV = os.environ, tools = ["default", compile_matlab_code])
 
+matlab_examples = []
+
+for name in ["3_1", "3_2"]:
+    filename = "example{0:s}".format(name)
+    env.MATLAB(filename)
+    matlab_examples.append(filename + ".m")
+
+env.Depends("lecture3.pdf", matlab_examples)
+
 env.PDF("lecture3.tex")

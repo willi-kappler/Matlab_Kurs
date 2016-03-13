@@ -22,7 +22,8 @@
             \item Beispielprogramme werden grün hinterlegt mit Zeilennummern abgebildet und die Ausgaben dieser Programme
             wird blau hinterlegt, z.B.:
         \end{itemize}
-        \insertMatlabCode{example1_0}
+        \vspace{-0.5cm}
+        \insertMatlabCodeOutput{example1_0}
     \end{frame}
 
     \begin{frame}
@@ -223,16 +224,16 @@
         \itemsep0.3cm
         \item Alle Anweisungen werden nach dem Prompt (\texttt{>>}) eingegeben und mit \keys{\return} (Return) bestätigt. Matlab nennt das Ergebnis \matlabOutput{ans} (für answer):
 
-        \vspace{0.3cm}
+        \vspace{-0.3cm}
 
-        \insertMatlabCode{example1_1}
+        \insertMatlabCodeOutput{example1_1}
 
         \item Addition ($\oplus$), Subtraktion ($\ominus$), Multiplikation ($\otimes$) und Division ($\oslash$) wie im Taschenrechner (Matlab kennt ``Punkt vor Strich-Rechnung'').
         \item Braucht man einen \textbf{Ausdruck öfters}, so kann man ihn als \textbf{Variable} definieren:
 
-        \vspace{0.3cm}
+        \vspace{-0.3cm}
 
-        \insertMatlabCode{example1_2}
+        \insertMatlabCodeOutput{example1_2}
 
         \item Variablen werden im Arbeitsspeicher (Workspace) gespeichert (s. Arbeitsspeicher-Fenster).
       \end{itemize}
@@ -250,9 +251,9 @@
           \item Sind sie durch ein Komma getrennt, so folgt eine Ausgabe.
           \item Werden sie durch ein Semikolon getrennt, so folgt keine Ausgabe:
 
-          \vspace{0.3cm}
+          \vspace{-0.3cm}
 
-          \insertMatlabCode{example1_3}
+          \insertMatlabCodeOutput{example1_3}
 
         \end{itemize}
       \end{itemize}
@@ -467,7 +468,23 @@
 
           Was gibt Matlab aus, wenn Sie die folgenden Anweisungen eingeben (geben Sie die Antwort, \textbf{bevor} Sie mit Matlab rechnen!):\\ \\
 
-          \matlabInput{a+b, a*2,a/2, a+3, a*b, a.*b, a./b, a*b`, a`*b}
+          \begin{columns}[t]
+            \begin{column}{5cm}
+                \texttt{a+b} \keys{\return} \\
+                \texttt{a*2,a/2} \keys{\return}  \\
+                \texttt{a+3} \keys{\return}  \\
+                \texttt{a*b} \keys{\return}  \\
+            \end{column}
+
+            \begin{column}{5cm}
+                \texttt{a.*b} \keys{\return}  \\
+                \texttt{a./b} \keys{\return}  \\
+                \texttt{a*b`} \keys{\return}  \\
+                \texttt{a`*b} \keys{\return}  \\
+            \end{column}
+          \end{columns}
+
+
       \end{exercise}
     \end{frame}
 
@@ -509,6 +526,7 @@
       \end{itemize}
     \end{frame}
 
+    \section{Ausblick}
     \subsection{Ausblick}
     \begin{frame}
       \frametitle{Ausblick}
