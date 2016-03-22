@@ -80,7 +80,7 @@
       \frametitle{Bsp.: Telefonieren}
       \begin{itemize}
           \item Telefoniervorgang als Pseudocode:
-          \lstinputlisting[language=pseudo]{pseudocode.txt}%
+          \lstinputlisting[language=pseudo]{pseudocode.txt}
       \end{itemize}
     \end{frame}
 
@@ -142,7 +142,7 @@
             \end{itemize}
             \item Logisches ``und'' durch ``\string&'':
             \begin{itemize}
-              \item \matlabInput{(x>1)&(x<5)} $\Rightarrow$ wahr für alle Werte von \texttt{x} zwischen 1 und 5
+              \item \matlabInput{(x>1)\string&(x<5)} $\Rightarrow$ wahr für alle Werte von \texttt{x} zwischen 1 und 5
             \end{itemize}
             \item Logisches ``oder'' durch ``\string|'':
             \begin{itemize}
@@ -152,6 +152,57 @@
             \begin{itemize}
               \item \matlabInput{a~=5} $\Rightarrow$ wahr, wenn a $\neq$ 5
             \end{itemize}
+          \end{itemize}
+      \end{frame}
+
+      \begin{frame}
+          \frametitle{Logische Operationen als Auswahlindizes}
+          \begin{itemize}
+            \item Die Benutzung logischer Operatoren als Auswahlindizes (Filter) ist eine angenehme Besonderheit von Matlab.
+            \item Erzeuge einen x-Vektor zwischen 0 und 10. Wähle alle x-Werte für $x^2>=4$ und $x^2<=64$ aus.
+            \item In Matlab sehr einfach zu realisieren:
+            \begin{itemize}
+              \item \matlabInput{x = [0:1:10]}
+              \item \matlabInput{x(x.\string^2>=4 \string& x.\string^2<=64)}
+              \item Gibt \matlabOutput{[2 3 4 5 6 7 8]} zurück
+            \end{itemize}
+          \end{itemize}
+        \end{frame}
+
+      \subsection{Verzweigung}
+      \begin{frame}
+          \frametitle{Wenn/dann/sonst Anweisungen}
+          \begin{itemize}
+            \item Beispiel: Ratengesetz nur dann auswerten, wenn die Konzentration größer null ist:
+            \lstinputlisting{example4_1.m}
+            \item Allgemein formuliert erlaubt Matlab (siehe \matlabInput{doc \matlabLink{if}}):
+            \lstinputlisting{example4_2.m}
+          \end{itemize}
+      \end{frame}
+
+      \subsection{Schleifen}
+      \begin{frame}
+          \frametitle{While Schleifen}
+          \begin{itemize}
+            \item Wird wiederholt, solange Bedingung erfüllt ist:
+            \lstinputlisting{example4_3.m}
+          \end{itemize}
+      \end{frame}
+
+      \begin{frame}
+          \frametitle{For Schleifen}
+          \begin{itemize}
+            \item Schleife mit vorgegebener Anzahl an Wiederholungen:
+            \lstinputlisting{example4_4.m}
+            \item Bei jedem Schleifendurchgang wird dem Index \texttt{i} der nächste Wert des Vektors \texttt{[1:10]} zugewiesen
+            \item Muss nicht  ein einfacher Zähler sein:
+            \lstinputlisting{example4_5.m}
+          \end{itemize}
+      \end{frame}
+
+      \begin{frame}
+          \frametitle{While oder For ?}
+          \begin{itemize}
           \end{itemize}
       \end{frame}
 
