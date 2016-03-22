@@ -2,6 +2,8 @@
 
 \matlabTitle{4. Schleifen}
 
+% Rechtschreibprüfung mit: aspell -l de -t --tex-check-comments -c lecture4/lecture4.tex
+
 \setcounter{mchapter}{4}
 \setcounter{mexercise}{0}
 
@@ -14,7 +16,7 @@
   \begin{frame}
       \frametitle{Sie wissen bereits...}
       \begin{itemize}
-          \item wie Sie durch Scripte Befehlsfolgen wiederverwertbar machen.
+          \item wie Sie durch Skripte Befehlsfolgen wiederverwendbar machen.
       \end{itemize}
 
       \textit{Wie kann ich häufig vorkommende Berechnungen/Abläufe automatisieren?}
@@ -63,7 +65,7 @@
           \item Ist für Menschen leicht verständlich
           \begin{itemize}
               \item kann aber vom Computer (noch) nicht ausgeführt werden
-              \item Ist inde den meisten Fällen keine Programmiersprache
+              \item Ist in den meisten Fällen keine Programmiersprache
               \item Orientiert sich aber oft an ``echten'' Programmiersprachen
           \end{itemize}
           \item Soll Algorithmen verständlich und klar ausdrücken, ohne auf die Eigenheiten einer Programmiersprache Rücksicht nehmen zu müssen
@@ -202,7 +204,61 @@
 
       \begin{frame}
           \frametitle{While oder For ?}
+          \begin{columns}[t]
+            \begin{column}{5cm}
+              While Schleife
+              \begin{itemize}
+                \item Gut, wenn vorher nicht genau bekannt ist, wann der Abbruch erfolgen muss.
+                \item Erlaubt kompliziertes Fortführungskriterium.
+                \item \alert{Gefahren}:
+                \begin{itemize}
+                  \item verpasster Einstieg (Typ \matlabInput{while 0==1})
+                  \item Endlosschleife, weil Kriterium immer erfüllt (Typ \matlabInput{while 1==1})
+                \end{itemize}
+              \end{itemize}
+            \end{column}
+
+            \begin{column}{6cm}
+              For Schleife
+              \begin{itemize}
+                \item Gut, wenn Anzahl der Durchgänge vorher festliegt.
+                \item Ein/Ausstieg gewährleistet.
+                \item Zusätzliche Verlängerung nicht möglich.
+                \item Vorzeitiger Ausstieg mit \matlabInput{\matlabLink{break}}-Befehl möglich:
+                \lstinputlisting{example4_6.m}
+              \end{itemize}
+            \end{column}
+          \end{columns}
+      \end{frame}
+
+      \secMexercise
+      \begin{frame}
+          \frameMexercise
+          \begin{exercise}
+              \sloppy
+              \begin{itemize}
+                \item Schreiben Sie ein Matlab-Programm zur Berechnung von Mittelwert und Standardabweichung eines Zufallsvektors unter Verwendung von Schleifen
+                \item Schreiben Sie denselben Code vektorisiert (\texttt{sum(x)} berechnet die Summe des Vektors \textbf{x}).
+                \item Vergleichen Sie Ihr Ergebnis mit den Matlab-Befehlen \texttt{mean} und \texttt{std}!
+                \item \textbf{Zusatz}: Die Befehle \texttt{tic; ... toc}; messen die Zeit. Vergleichen Sie die Laufzeit ihrer beiden Programme und die der
+                Matlab-Befehle \texttt{mean} und \texttt{std}. (Für große Vektoren)
+              \end{itemize}
+          \end{exercise}
+      \end{frame}
+
+      \subsection{Ausblick}
+      \begin{frame}
+          \frametitle{Ausblick}
           \begin{itemize}
+            \item Hausaufgaben zur Vertiefung
+            \begin{itemize}
+              \item Sie können umgangssprachlich formulierte Anweisungen in ein Matlab-Programm ``übersetzen''.
+              \item Sie implementieren eine komplexe Berechnung in einem Skript und stellen diese grafisch in einem Oberflächenplot dar.
+            \end{itemize}
+            \item Nächste Einheit - noch mehr ``Recycling'':
+            \begin{itemize}
+              \item Implementieren von eigenen Funktionen in Matlab
+            \end{itemize}
           \end{itemize}
       \end{frame}
 
