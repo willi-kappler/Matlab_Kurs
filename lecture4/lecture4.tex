@@ -1,26 +1,109 @@
 \input{../common/header.tex}
 
-\title{\input{../common/title.txt}\\{\scriptsize 4. Schleifen}}
+\matlabTitle{4. Schleifen}
 
 \begin{document}
   \input{../common/title.tex}
 
-    \section{Einleitung}
-    \begin{frame}
-        \frametitle{Inhaltsverzeichnis}
-        \tableofcontents[currentsection]
+  \section{Einleitung}
+
+  \subsection{Motivation}
+  \begin{frame}
+      \frametitle{Sie wissen bereits...}
+      \begin{itemize}
+          \item wie Sie durch Scripte Befehlsfolgen wiederverwertbar machen.
+      \end{itemize}
+
+      \textit{Wie kann ich häufig vorkommende Berechnungen/Abläufe automatisieren?}
+  \end{frame}
+
+  \begin{frame}
+      \frametitle{Nach diesem vierten Block...}
+      \begin{itemize}
+          \item können Sie Berechnungen ``umgangssprachlich'' als Algorithmus formulieren.
+          \item können Sie in Matlab Algorithmen implementieren und verwenden dabei sicher die Hilfsmittel der
+          \begin{itemize}
+              \item logischen Operatoren
+              \item Wenn-Dann-Anweisungen
+              \item While- und For-Schleifen
+          \end{itemize}
+      \end{itemize}
+  \end{frame}
+
+  \section{Programmieren}
+
+  \subsection{Vorgehen}
+  \begin{frame}
+      \frametitle{Matlab als Programmiersprache}
+      \begin{itemize}
+          \item \textbf{Ziel}: Lösen einer (beliebig) komplizierten Berechnungsaufgabe
+          \item \textbf{Vorgehen}:
+          \begin{enumerate}
+              \item Genaue Beschreibung der Aufgabe
+              \item Formulierung eines \textbf{Algorithmus} (Schritt-für-Schritt Berechnungsanweisung) in Form eines Ablaufplans/``Kochrezepts'' oder Pseudocode
+              \item Umsetzung in Programmiersprache
+              \item Testen des Programms, evtl. zurück zu Punkt 2, oder 3
+              \item Wartung und Pflege des Programms während der Nutzung
+          \end{enumerate}
+          \item Setzt voraus, dass Möglichkeiten der Programmiersprache bekannt sind
+          \item In diesem Kurs geht es hauptsächlich um Punkt 3
+      \end{itemize}
+  \end{frame}
+
+
+  \subsection{Pseudocode}
+  \begin{frame}
+      \frametitle{Pseudocode}
+      \begin{itemize}
+          \item Sprachliche Mischung aus natürlicher Sprache, mathematischer Notation und einer höheren Programmiersprache
+          \item Dient genauer Beschreibung des Algorithmus
+          \item Ist für Menschen leicht verständlich
+          \begin{itemize}
+              \item kann aber vom Computer (noch) nicht ausgeführt werden
+              \item Ist inde den meisten Fällen keine Programmiersprache
+              \item Orientiert sich aber oft an ``echten'' Programmiersprachen
+          \end{itemize}
+          \item Soll Algorithmen verständlich und klar ausdrücken, ohne auf die Eigenheiten einer Programmiersprache Rücksicht nehmen zu müssen
+          \item Umgangssprache hilft Verfahrensschritte zu verdeutlichen
+          \begin{itemize}
+            \item \texttt{``durchlaufe das Feld a mit Index i''}
+            \item \texttt{``vertausche die Inhalte der Variablen x und y''}
+          \end{itemize}
+      \end{itemize}
+  \end{frame}
+
+  \subsection{Bsp.: Telefonieren}
+  \begin{frame}
+      \frametitle{Bsp.: Telefonieren}
+      \begin{itemize}
+          \item Telefoniervorgang als Pseudocode:
+          \lstinputlisting[language=pseudo]{pseudocode.txt}%
+      \end{itemize}
     \end{frame}
 
-    \section{Part 1}
+    \subsection{Flussdiagramm}
     \begin{frame}
-        \frametitle{This is the first slide}
-        Text
-    \end{frame}
+        \frametitle{Flussdiagramm}
+        \begin{itemize}
+          \item Telefoniervorgang als Flussdiagramm:
+        \end{itemize}
+        \begin{tikzpicture}[node distance = 2.5cm]
+          \node [block] (init) {Hörer abnehmen};
+          \node [decision, right of=init] (free) {Frei-zeichen};
+          \node [block, right of=free] (dial) {wähle};
+          \node [decision, right of=dial] (long) {langes Tuten};
+          \node [block, right of=long] (wait) {auf Antwort warten};
+          \node [decision, below of=long] (short) {kurzes Tuten};
+          \node [block, right of=short] (hangup) {lege auf};
+          \node [block, below of=free, text width=5em] (check) {lege auf und überprüfe Anschluss};
+          \path [line] (init) -- (free);
+          \path [line] (free) -- node [above] {ja} (dial);
+          \path [line] (free) -- node [left] {nein} (check);
+          \path [line] (dial) -- (long);
+          \path [line] (long) -- node [above] {ja} (wait);
+          \path [line] (long) -- node [left] {nein} (short);
+          \path [line] (short) -- node [above] {ja} (hangup);
+        \end{tikzpicture}
+      \end{frame}
 
-    \section{Part 2}
-    \begin{frame}
-        \frametitle{This is the second slide}
-        \framesubtitle{A bit more information about this}
-        Text
-    \end{frame}
 \end{document}

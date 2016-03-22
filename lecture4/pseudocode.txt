@@ -1,0 +1,8 @@
+Hoerer abnehmen
+WENN Freizeichen
+  DANN waehle
+    WENN langes Tuten
+      DANN auf Antwort warten
+    SONST WENN kurzes Tuten
+      DANN lege auf
+SONST lege auf und ueberpruefe Anschluss

@@ -10,6 +10,8 @@
 \usepackage{courier}
 \usepackage{amsmath}
 
+\usetikzlibrary{shapes,arrows}
+
 \usetheme{Madrid}
 \usecolortheme{beaver}
 
@@ -27,6 +29,12 @@
 {\includegraphics[width=3cm]{../common/logo_uni_tuebingen2.png}};
 \end{tikzpicture}}
 
+% Define flow diagramm options
+
+\tikzstyle{decision} = [diamond, draw, fill=green!20, text width=3.5em, text badly centered, node distance=2.5cm, inner sep=0pt, font=\small]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=3.5em, text centered, rounded corners, minimum height=4em, font=\small]
+\tikzstyle{line} = [draw, -latex']
+
 
 % Settings for Matlab syntax highlighting
 % backgroundcolor=\color{yellow},
@@ -41,6 +49,10 @@
         language=Matlab, %
         backgroundcolor=\color{matlab_input}
         }
+
+
+% Define highlighting for pseudocode
+\lstdefinelanguage{pseudo}{morekeywords={WENN, DANN, SONST}, sensitive=true}
 
 % Option for mdframed:
 \newmdenv[backgroundcolor=yellow!30, roundcorner=5pt]{exercise}
@@ -67,12 +79,10 @@
 \newcommand{\insertMatlabCodeOutput}[1]{%
     \begin{columns}[t]%
       \begin{column}{5cm}%
-        %\colorbox{matlab_input}{\lstinputlisting{#1.m}}%
         \lstinputlisting{#1.m}%
       \end{column}%
 %
       \begin{column}{5cm}%
-        %\colorbox{matlab_output}{\lstinputlisting{#1.txt}}%
         \lstinputlisting[backgroundcolor=\color{matlab_output}]{#1.txt}%
       \end{column}%
     \end{columns}%
@@ -82,7 +92,6 @@
 \newcommand{\insertMatlabCodePlot}[1]{%
     \begin{columns}[t]%
       \begin{column}{5cm}%
-        %\colorbox{matlab_input}{\lstinputlisting{#1.m}}%
         \lstinputlisting{#1.m}%
       \end{column}%
 %
