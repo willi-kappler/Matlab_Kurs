@@ -2,6 +2,9 @@
 
 \matlabTitle{4. Schleifen}
 
+\setcounter{mchapter}{4}
+\setcounter{mexercise}{0}
+
 \begin{document}
   \input{../common/title.tex}
 
@@ -105,5 +108,52 @@
           \path [line] (short) -- node [above] {ja} (hangup);
         \end{tikzpicture}
       \end{frame}
+
+      \secMexercise
+      \begin{frame}
+          \frameMexercise
+          \begin{exercise}
+              \sloppy
+              Schreiben Sie einen Pseudocode für die Berechnung des Mittelwerts und der Standardabweichung \textit{s} eines Zahlenvektors \textbf{x} \\
+              \begin{displaymath}
+                m = \frac{1}{n} \sum_{i=1}^{n}X_{i}
+              \end{displaymath}
+              \begin{displaymath}
+                s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n}\left( x_{i} - m \right)^{2}} = \sqrt{\frac{1}{n-1} \left( \sum_{i=1}^{n} x_{i}^{2} - nm^{2} \right)}
+              \end{displaymath}
+          \end{exercise}
+      \end{frame}
+
+      \subsection{Logische Operationen}
+      \begin{frame}
+          \frametitle{Logische Operationen}
+          \begin{itemize}
+            \item Vergleich zwischen zwei \textbf{Zahlen}:
+            \begin{itemize}
+              \item \matlabInput{a=(3>1)} $\Rightarrow$ erzeugt logische Variable \texttt{a} mit Wert \matlabOutput{true (1)}
+              \item \matlabInput{2>=4} $\Rightarrow$ \matlabOutput{false (0)}
+              \item \matlabInput{1<pi} $\Rightarrow$ \matlabOutput{true (1)}
+              \item \matlabInput{3==pi} $\Rightarrow$ \matlabOutput{false (0)}
+              \item vergleichendes ``ist gleich'' durch \texttt{``==''}, Zuweisung durch \texttt{``=''}
+            \end{itemize}
+            \item Vergleich zwischen zwei \textbf{Vektoren}:
+            \begin{itemize}
+              \item \matlabInput{[1:4]<[5:-2:-1]} $\Rightarrow$ \matlabOutput{[true,true,false,false]}
+            \end{itemize}
+            \item Logisches ``und'' durch ``\string&'':
+            \begin{itemize}
+              \item \matlabInput{(x>1)&(x<5)} $\Rightarrow$ wahr für alle Werte von \texttt{x} zwischen 1 und 5
+            \end{itemize}
+            \item Logisches ``oder'' durch ``\string|'':
+            \begin{itemize}
+              \item \matlabInput{(x>1)|(x<5)} $\Rightarrow$ ist immer wahr
+            \end{itemize}
+            \item Logische Negation durch ``\string~'':
+            \begin{itemize}
+              \item \matlabInput{a~=5} $\Rightarrow$ wahr, wenn a $\neq$ 5
+            \end{itemize}
+          \end{itemize}
+      \end{frame}
+
 
 \end{document}
