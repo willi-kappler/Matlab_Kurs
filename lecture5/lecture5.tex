@@ -63,4 +63,107 @@
       \end{itemize}
   \end{frame}
 
+
+  \secMexercise
+  \begin{frame}
+      \frameMexercise
+      \begin{exercise}
+          \sloppy
+          Überlagerung von zwei Sinusschwingungen (schwing.m)
+          \begin{itemize}
+            \item Darzustellende Funktion:
+            \item $ y(x) = a_{1}sin(fx + \phi_{1}) + a_{2}sin(fx + \phi_{2})$
+            \item Interaktive Eingabe:
+            \begin{itemize}
+              \item gemeinsame Frequenz \texttt{f}
+              \item Amplitude der ersten Komponente \texttt{a1}
+              \item Amplitude der ersten Komponente \texttt{a2}
+              \item Phasenwinkel der ersten Komponente \texttt{phi1}
+              \item Phasenwinkel der zweiten Komponente \texttt{phi2}
+            \end{itemize}
+            \item Graphische Ausgabe im Intervall $[-\pi,+\pi]$
+          \end{itemize}
+      \end{exercise}
+  \end{frame}
+
+  \section{Funktionen}
+
+  \subsection{Skripte und Funktionen}
+  \begin{frame}
+      \frametitle{Skripte und Funktionen}
+      \begin{itemize}
+        \item ``Idee'' eines Scriptes: ersetzt manuelle Eingabe einer Befehlsfolge:
+        \begin{itemize}
+          \item Variablen stehen auch nach Ausführung des Scriptes zu Verfügung
+          \item Wenn Variablenwerte im Script verändert werden, sind sie auch außerhalb des Scriptes verändert
+          \item Ein Script kann ein anderes Script aufrufen
+          \begin{itemize}
+            \item mit gemeinsamer Nutzung des Arbeitsspeichers
+          \end{itemize}
+          \item Nachteile eines Scriptes
+          \begin{itemize}
+            \item Allgemeiner Arbeitsspeicher wird mit Zwischengrößen ``zugemüllt''
+            \item Variablenbezeichnung muss über alle Scripte hinweg konsistent sein (\alert{Vorsicht!} Seiteneffekte)
+          \end{itemize}
+        \end{itemize}
+      \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+      \frametitle{Skripte und Funktionen Fortsetzung}
+      \begin{itemize}
+        \item ``Idee'' einer \textbf{Funktion}: ``Input $\Rightarrow$ Output''-Beziehung:
+        \begin{itemize}
+          \item Von der Außenwelt ist nur das bekannt, was als Input-Argument(e) übergeben wird
+          \item Der Außenwelt wird lediglich das Ergebnis (Output-Argument(e)) mitgeteilt
+          \item Innenwelt der Funktion ist von außen nicht einsehbar
+          \begin{itemize}
+            \item Eine Funktion hat ihren eigenen Speicherbereich
+          \end{itemize}
+        \end{itemize}
+      \end{itemize}
+  \end{frame}
+
+  \subsection{Vorteile}
+  \begin{frame}
+      \frametitle{Vorteile von Funktionen}
+      \begin{itemize}
+        \item Modularisierung
+        \begin{itemize}
+          \item Unterteile ein großes Projekt in viele Einzelschritte und stelle Methoden für die Einzelschritte zur Verfügung
+          \item Eigener Namensraum, in verschiedenen Funktionen kann es die lokale Variable \texttt{i} oder \texttt{t} geben
+        \end{itemize}
+        \item Wiederverwendbarkeit
+        \begin{itemize}
+          \item Identischer Einzelschritt kann mehrfach, auch in anderen Projekten, verwendet werden
+        \end{itemize}
+        \item \urlLink{https://en.wikipedia.org/wiki/Encapsulation_\%28computer_programming\%29}{Einkapselung}
+        \begin{itemize}
+          \item Wenn eine Funktion funktioniert, interessiert mich nicht ihr Innenleben, und ich will nicht mit Zwischenergebnissen belästigt werden
+          \item \urlLink{https://en.wikipedia.org/wiki/Black_box}{Black Box} Prinzip (s.a. \urlLink{https://en.wikipedia.org/wiki/Information_hiding}{Information Hiding})
+        \end{itemize}
+      \end{itemize}
+  \end{frame}
+
+  \subsection{Schnittstelle}
+  \begin{frame}
+      \frametitle{Funktionen erfordern eine Schnittstelle}
+      Funktionen Definition in Matlab:
+      \begin{itemize}
+        \item Definiert in der ersten Zeile
+        \item \matlabInput{\matlabLink{function} [out1,out2]=myfunction(in1,in2)}
+        \begin{itemize}
+          \item Erstes Wort = Schlüsselwort \matlabInput{\matlabLink{function}}
+          \item Liste der \textbf{Outputargumente} (in eckigen Klammern, also als Vektor)
+          \item Name der Funktion mit Liste der \textbf{Inputargumente} in runden Klammern
+        \end{itemize}
+        \item Die Schnittstelle ist definiert über die Reihenfolge der Argumente, nicht über die Namen
+        \begin{itemize}
+          \item \textbf{Vorteil}: Variablennamen im Innern können sich von den Variablennamen außen unterscheiden
+          \item \textbf{Nachteil}: Man muss sich die Reihenfolge merken
+          \item Voraussetzung für allgemeine Wiederverwertbarkeit
+        \end{itemize}
+      \end{itemize}
+  \end{frame}
+
 \end{document}
