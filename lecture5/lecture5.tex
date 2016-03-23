@@ -16,7 +16,7 @@
   \begin{frame}
       \frametitle{Sie wissen bereits...}
       \begin{itemize}
-          \item wie Sie durch Scripte Befehlsfolgen wiederverwertbar machen.
+          \item wie Sie durch Skripte Befehlsfolgen wiederverwendbar machen.
           \item wie Sie häufig vorkommende Berechnungen in Algorithmen formulieren.
       \end{itemize}
 
@@ -27,7 +27,7 @@
       \frametitle{Nach diesem fünften Block...}
       \begin{itemize}
           \item können Sie interaktive Eingaben anfordern und Ausgaben erstellen.
-          \item können Sie eigene Funktionen definieren und z.B. in Scripten aufrufen/wiederverwenden.
+          \item können Sie eigene Funktionen definieren und z.B. in Skripten aufrufen/wiederverwenden.
       \end{itemize}
   \end{frame}
 
@@ -35,7 +35,7 @@
   \begin{frame}
       \frametitle{Ein- und Ausgabe}
       \begin{itemize}
-          \item Ausgabe eines Textes im Comand-Window:
+          \item Ausgabe eines Textes im Command-Window:
             \begin{itemize}
                 \item \matlabInput{\matlabLink{disp}} steht für ``display''
                 \item Text-Strings sind von Hochkommata umschlossen
@@ -43,9 +43,9 @@
             \end{itemize}
           \item Interaktive Eingabe:
           \begin{itemize}
-              \item \matlabInput{a=\matlabLink{input}('Bitte Halbwertszeit [Tage]} \matlabInput{für Photoabbau eingeben: ')}
-              \item erzeugt den Text auf dem Bildschirm und wartet, bis eine Eingabe abgeschlossen ist (Return beendet die Eingabe)
-              \item Der eingegebene Wert steht dann in der Variable \matlabInput{a}
+              \item \matlabInput{a = \matlabLink{input}('Bitte Halbwertszeit [Tage]} \matlabInput{für Photoabbau eingeben: ')}
+              \item erzeugt den Text auf dem Bildschirm und wartet, bis eine Eingabe abgeschlossen ist (Return beendet die Eingabe).
+              \item Der eingegebene Wert steht dann in der Variable \matlabInput{a}.
           \end{itemize}
       \end{itemize}
   \end{frame}
@@ -56,7 +56,7 @@
           \item Beispiel:
           \begin{itemize}
               \item \matlabInput{jn = input('Abbruch? (j/n) ','s')}
-              \item Zusatzargument 's' erklärt, dass Ergebnis als Text-String zu lesen ist (selbst wenn der String aus Ziffern besteht)
+              \item Zusatzargument 's' erklärt, dass Ergebnis als Text-String zu lesen ist (selbst wenn der String aus Ziffern besteht).
               \item Umgang mit Fehlern der Nutzer $\Rightarrow$ typische Schleife, bis richtige Antwort kommt:
           \end{itemize}
           \lstinputlisting{example5_1.m}
@@ -72,7 +72,7 @@
           Überlagerung von zwei Sinusschwingungen (schwing.m)
           \begin{itemize}
             \item Darzustellende Funktion:
-            \item $ y(x) = a_{1}sin(fx + \phi_{1}) + a_{2}sin(fx + \phi_{2})$
+            \item $ y(x) = a_{1}\sin(fx + \phi_{1}) + a_{2}\sin(fx + \phi_{2})$
             \item Interaktive Eingabe:
             \begin{itemize}
               \item gemeinsame Frequenz \texttt{f}
@@ -92,18 +92,18 @@
   \begin{frame}
       \frametitle{Skripte und Funktionen}
       \begin{itemize}
-        \item ``Idee'' eines Scriptes: ersetzt manuelle Eingabe einer Befehlsfolge:
+        \item ``Idee'' eines Skriptes: ersetzt manuelle Eingabe einer Befehlsfolge:
         \begin{itemize}
-          \item Variablen stehen auch nach Ausführung des Scriptes zu Verfügung
-          \item Wenn Variablenwerte im Script verändert werden, sind sie auch außerhalb des Scriptes verändert
-          \item Ein Script kann ein anderes Script aufrufen
+          \item Variablen stehen auch nach Ausführung des Skriptes zu Verfügung.
+          \item Wenn Variablenwerte im Skript verändert werden, sind sie auch außerhalb des Skriptes verändert.
+          \item Ein Skript kann ein anderes Skript aufrufen.
           \begin{itemize}
-            \item mit gemeinsamer Nutzung des Arbeitsspeichers
+            \item mit gemeinsamer Nutzung des Arbeitsspeichers.
           \end{itemize}
-          \item Nachteile eines Scriptes
+          \item Nachteile eines Skriptes:
           \begin{itemize}
-            \item Allgemeiner Arbeitsspeicher wird mit Zwischengrößen ``zugemüllt''
-            \item Variablenbezeichnung muss über alle Scripte hinweg konsistent sein (\alert{Vorsicht!} Seiteneffekte)
+            \item Allgemeiner Arbeitsspeicher wird mit Zwischengrößen ``zugemüllt''.
+            \item Variablenbezeichnung muss über alle Skripte hinweg konsistent sein (\alert{Vorsicht!} Seiteneffekte).
           \end{itemize}
         \end{itemize}
       \end{itemize}
@@ -114,11 +114,11 @@
       \begin{itemize}
         \item ``Idee'' einer \textbf{Funktion}: ``Input $\Rightarrow$ Output''-Beziehung:
         \begin{itemize}
-          \item Von der Außenwelt ist nur das bekannt, was als Input-Argument(e) übergeben wird
-          \item Der Außenwelt wird lediglich das Ergebnis (Output-Argument(e)) mitgeteilt
-          \item Innenwelt der Funktion ist von außen nicht einsehbar
+          \item Von der Außenwelt ist nur das bekannt, was als Eingabeargument(e) übergeben wird.
+          \item Der Außenwelt wird lediglich das Ergebnis (Ausgabeargument(e)) mitgeteilt.
+          \item Innenwelt der Funktion ist von außen nicht einsehbar.
           \begin{itemize}
-            \item Eine Funktion hat ihren eigenen Speicherbereich
+            \item Eine Funktion hat ihren eigenen Speicherbereich.
           \end{itemize}
         \end{itemize}
       \end{itemize}
@@ -128,18 +128,18 @@
   \begin{frame}
       \frametitle{Vorteile von Funktionen}
       \begin{itemize}
-        \item Modularisierung
+        \item Modularisierung:
         \begin{itemize}
-          \item Unterteile ein großes Projekt in viele Einzelschritte und stelle Methoden für die Einzelschritte zur Verfügung
-          \item Eigener Namensraum, in verschiedenen Funktionen kann es die lokale Variable \texttt{i} oder \texttt{t} geben
+          \item Unterteile ein großes Projekt in viele Einzelschritte und stelle Methoden für die Einzelschritte zur Verfügung.
+          \item Eigener Namensraum, in verschiedenen Funktionen kann es die lokale Variable \texttt{i} oder \texttt{t} geben.
         \end{itemize}
-        \item Wiederverwendbarkeit
+        \item Wiederverwendbarkeit:
         \begin{itemize}
-          \item Identischer Einzelschritt kann mehrfach, auch in anderen Projekten, verwendet werden
+          \item Identischer Einzelschritt kann mehrfach, auch in anderen Projekten, verwendet werden.
         \end{itemize}
-        \item \urlLink{https://en.wikipedia.org/wiki/Encapsulation_\%28computer_programming\%29}{Einkapselung}
+        \item \urlLink{https://en.wikipedia.org/wiki/Encapsulation_\%28computer_programming\%29}{Einkapselung}:
         \begin{itemize}
-          \item Wenn eine Funktion funktioniert, interessiert mich nicht ihr Innenleben, und ich will nicht mit Zwischenergebnissen belästigt werden
+          \item Wenn eine Funktion funktioniert, interessiert mich nicht ihr Innenleben, und ich will nicht mit Zwischenergebnissen belästigt werden.
           \item \urlLink{https://en.wikipedia.org/wiki/Black_box}{Black Box} Prinzip (s.a. \urlLink{https://en.wikipedia.org/wiki/Information_hiding}{Information Hiding})
         \end{itemize}
       \end{itemize}
@@ -151,19 +151,90 @@
       Funktionen Definition in Matlab:
       \begin{itemize}
         \item Definiert in der ersten Zeile
-        \item \matlabInput{\matlabLink{function} [out1,out2]=myfunction(in1,in2)}
+        \item \matlabInput{\matlabLink{function} [out1,out2] = myfunction(in1,in2)}
         \begin{itemize}
           \item Erstes Wort = Schlüsselwort \matlabInput{\matlabLink{function}}
-          \item Liste der \textbf{Outputargumente} (in eckigen Klammern, also als Vektor)
-          \item Name der Funktion mit Liste der \textbf{Inputargumente} in runden Klammern
+          \item Liste der \textbf{Eingabeparameter} (in eckigen Klammern, also als Vektor).
+          \item Name der Funktion mit Liste der \textbf{Ausgabeparameter} in runden Klammern.
         \end{itemize}
-        \item Die Schnittstelle ist definiert über die Reihenfolge der Argumente, nicht über die Namen
+        \item Die Schnittstelle ist definiert über die Reihenfolge der Argumente, nicht über die Namen.
         \begin{itemize}
-          \item \textbf{Vorteil}: Variablennamen im Innern können sich von den Variablennamen außen unterscheiden
-          \item \textbf{Nachteil}: Man muss sich die Reihenfolge merken
-          \item Voraussetzung für allgemeine Wiederverwertbarkeit
+          \item \textbf{Vorteil}: Variablennamen im Innern können sich von den Variablennamen außen unterscheiden.
+          \item \textbf{Nachteil}: Man muss sich die Reihenfolge merken.
+          \item Voraussetzung für allgemeine Wiederverwendbarkeit.
         \end{itemize}
       \end{itemize}
   \end{frame}
+
+  \subsection{Hilfetexte}
+  \begin{frame}
+      \frametitle{Erstellung eigener Hilfetexte}
+      \begin{itemize}
+        \item Kommentarzeilen direkt unter der Kopfzeile werden bei \matlabInput{\matlabLink{help} Funktionsname} ausgegeben
+        (z.B. \matlabInput{\matlabLink{help} myfunction}):
+        \lstinputlisting{example5_2.m}
+      \end{itemize}
+  \end{frame}
+
+  \secMexercise
+  \begin{frame}
+      \frameMexercise
+      \begin{exercise}
+          \sloppy
+          Bogenmaß in Grad umwandeln:
+          \begin{itemize}
+            \item Funktion \texttt{phi\_deg = r2d(phi)} soll einen Winkel in Bogenmaß ($0-2\pi$ ) in Gradmaß (0-360$^{\circ}$) umwandeln
+          \end{itemize}
+      \end{exercise}
+  \end{frame}
+
+  \secMexercise
+  \begin{frame}
+      \frameMexercise
+      \begin{exercise}
+          \sloppy
+          Mittelwert und Standardabweichung:
+          \begin{itemize}
+            \item Funktion \texttt{[m,s] = mittel\_standardabw(x)} soll Mittelwert und Standardabweichung des Vektors \texttt{x} berechnen.
+            \item Schreiben Sie zusätzlich ein Skript, das interaktiv nach der Anzahl \texttt{n} normal verteilter Zahlen mit vorgegebenem
+            Mittelwert \texttt{m\_val} und Standardabweichung \texttt{s\_val} fragt, diese generiert und die Funktion
+            \texttt{mittel\_standardabw} aufruft und ausgibt.
+            \item Tipp: normal verteilte Zufallszahlen generieren: \texttt{x = m\_val + s\_val * randn(n,1);}
+          \end{itemize}
+      \end{exercise}
+  \end{frame}
+
+  \secMexercise
+  \begin{frame}
+      \frameMexercise
+      \begin{exercise}
+          \sloppy
+          \begin{itemize}
+            \item Abstand zwischen einem Punkt \texttt{($x_{0}$, $y_{0}$)} zu einem (oder vielen) Punkt(en) \texttt{(X,Y)}:
+            \begin{displaymath}
+              r = \sqrt{(x - x_{0})^{2} + (y - y_{0})^{2}}
+            \end{displaymath}
+            \item Funktionskopf: \texttt{r = dist(x0,y0,X,Y)}
+            \item Schreiben Sie die Funktion \texttt{dist} in eine Datei dist.m.
+            \item Schreiben Sie ein Skript, in welchem Sie:
+            \begin{itemize}
+              \item den Punkt \texttt{(x0, y0)} interaktiv eingeben.
+              \item die Matrizen \textbf{X} und \textbf{Y} auf einem regelmäßigen Gitter erzeugen (\texttt{meshgrid}).
+              \item Ihre Abstandsfunktion \texttt{dist} aufrufen.
+              \item Das Ergebnis als \texttt{contour}-Grafik darstellen.
+            \end{itemize}
+          \end{itemize}
+      \end{exercise}
+  \end{frame}
+
+  \subsection{Ausblick}
+  \begin{frame}
+      \frametitle{Ausblick}
+      \begin{itemize}
+        \item Wie kann ich eigene Funktionen nutzen, um Differentialgleichungen mit Matlab zu lösen?
+      \end{itemize}
+  \end{frame}
+
+
 
 \end{document}
