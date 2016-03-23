@@ -1,26 +1,66 @@
 \input{../common/header.tex}
 
-\title{\input{../common/title.txt}\\{\scriptsize 5. Funktionen}}
+\matlabTitle{5. Funktionen}
+
+% Rechtschreibprüfung mit: aspell -l de -t --tex-check-comments -c lecture5/lecture5.tex
+
+\setcounter{mchapter}{5}
+\setcounter{mexercise}{0}
 
 \begin{document}
   \input{../common/title.tex}
 
-    \section{Einleitung}
-    \begin{frame}
-        \frametitle{Inhaltsverzeichnis}
-        \tableofcontents[currentsection]
-    \end{frame}
+  \section{Einleitung}
 
-    \section{Part 1}
-    \begin{frame}
-        \frametitle{This is the first slide}
-        Text
-    \end{frame}
+  \subsection{Motivation}
+  \begin{frame}
+      \frametitle{Sie wissen bereits...}
+      \begin{itemize}
+          \item wie Sie durch Scripte Befehlsfolgen wiederverwertbar machen.
+          \item wie Sie häufig vorkommende Berechnungen in Algorithmen formulieren.
+      \end{itemize}
 
-    \section{Part 2}
-    \begin{frame}
-        \frametitle{This is the second slide}
-        \framesubtitle{A bit more information about this}
-        Text
-    \end{frame}
+      \textit{Wie kann ich eigene Funktionen für verschiedene Eingaben erstellen und damit Berechnungsschritte wiederverwenden?}
+  \end{frame}
+
+  \begin{frame}
+      \frametitle{Nach diesem fünften Block...}
+      \begin{itemize}
+          \item können Sie interaktive Eingaben anfordern und Ausgaben erstellen.
+          \item können Sie eigene Funktionen definieren und z.B. in Scripten aufrufen/wiederverwenden.
+      \end{itemize}
+  \end{frame}
+
+  \subsection{Ein- und Ausgabe}
+  \begin{frame}
+      \frametitle{Ein- und Ausgabe}
+      \begin{itemize}
+          \item Ausgabe eines Textes im Comand-Window:
+            \begin{itemize}
+                \item \matlabInput{\matlabLink{disp}} steht für ``display''
+                \item Text-Strings sind von Hochkommata umschlossen
+                \item \matlabInput{\matlabLink{disp}} versteht auch Vektoren: \matlabInput{disp(['He' 'llo' 'World'])}
+            \end{itemize}
+          \item Interaktive Eingabe:
+          \begin{itemize}
+              \item \matlabInput{a=\matlabLink{input}('Bitte Halbwertszeit [Tage]} \matlabInput{für Photoabbau eingeben: ')}
+              \item erzeugt den Text auf dem Bildschirm und wartet, bis eine Eingabe abgeschlossen ist (Return beendet die Eingabe)
+              \item Der eingegebene Wert steht dann in der Variable \matlabInput{a}
+          \end{itemize}
+      \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+      \frametitle{Ein- und Ausgabe Fortsetzung}
+      \begin{itemize}
+          \item Beispiel:
+          \begin{itemize}
+              \item \matlabInput{jn = input('Abbruch? (j/n) ','s')}
+              \item Zusatzargument 's' erklärt, dass Ergebnis als Text-String zu lesen ist (selbst wenn der String aus Ziffern besteht)
+              \item Umgang mit Fehlern der Nutzer $\Rightarrow$ typische Schleife, bis richtige Antwort kommt:
+          \end{itemize}
+          \lstinputlisting{example5_1.m}
+      \end{itemize}
+  \end{frame}
+
 \end{document}
