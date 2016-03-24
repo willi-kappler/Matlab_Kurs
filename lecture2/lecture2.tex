@@ -164,7 +164,7 @@
               \item Achsenbeschriftung: \matlabInput{\matlabLink{xlabel}('x [m]');} und \matlabInput{\matlabLink{ylabel}('c [mol/L]');}.
               \item Titel hinzufügen: \matlabInput{\matlabLink{title}('Titeltext');}
               \item Legende hinzufügen: \matlabInput{\matlabLink{legend}('c');}
-              \item Matlab kennt rudimentäre LaTeX-Syntax für Strings: \matlabInput{\matlabLink{xlabel}('c [mol/m\string^3]')} ergibt hoch gestellte ``3'',
+              \item Matlab kennt rudimentäre \LaTeX-Syntax für Strings: \matlabInput{\matlabLink{xlabel}('c [mol/m\string^3]')} ergibt hoch gestellte ``3'',
               \matlabInput{\matlabLink{title}('c\_\{cons\}')} ergibt tief gestelltes ``cons''
           \end{itemize}
       \end{frame}
@@ -238,7 +238,7 @@
       \begin{frame}
           \frametitle{Grafikdateien erstellen}
           \begin{itemize}
-              \item Problem: Sie brauchen für einen Bericht einen guten Plot Ihrer Daten, und zwar genau 9cm breit, 6 cm hoch
+              \item Problem: Sie brauchen für einen Bericht einen guten Plot Ihrer Daten, und zwar genau 9 cm breit, 6 cm hoch
               \item Matlab-Lösung: Abbildung in Grafikdatei ``drucken'' (siehe \matlabInput{doc \matlabLink{print}})
               \item \matlabInput{\matlabLink{print} –djpeg100 –r300 my\_plot.jpg}
               \item \texttt{djpeg100}: Format und Qualität
