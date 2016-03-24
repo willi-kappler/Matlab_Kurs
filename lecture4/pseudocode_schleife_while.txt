@@ -1,11 +1,11 @@
 Waehle Studiengang
-Einschreiben;
-ECTS = 0;
+Einschreiben
+ECTS = 0
 
 WHILE (ECTS < 168)
-  waehle neue Veranstaltung;
-  beende Veranstaltung erfolgreich;
-  addiere ECTS;
+  waehle neue Veranstaltung
+  beende Veranstaltung erfolgreich
+  addiere ECTS
 END
 
-Schreibe Bachelorarbeit;
+Schreibe Bachelorarbeit
