@@ -281,7 +281,7 @@
         \frametitle{Visualisierung zweidimensionaler Funktionen}
         \begin{itemize}
             \item Aufgabe: Visualisierung einer Funktion \texttt{z = f(x,y)}, die von zwei Koordinaten abhängt
-            \item Beispiel: \texttt{z = x*y}
+            \item Beispiel: \texttt{z =cos(x*y)}
             \item Herangehensweise:
             \begin{enumerate}
                 \item Erzeuge ein regelmäßiges Gitter von x- und y-Werten (Vektoren \texttt{X} und \texttt{Y})
@@ -297,10 +297,10 @@
         \begin{enumerate}
             \item Regelmäßiges Gitter:
             \begin{itemize}
-                \item Erzeuge Vektoren der regelmäßigen x- und y-Werte: \matlabInput{xvec = [-2:1:2]; yvec = [-1:1:1];}
+                \item Erzeuge Vektoren der regelmäßigen x- und y-Werte: \matlabInput{xvec = [-3:0.1:3]; yvec = [-3:0.1:3];}
                 \item Erzeuge hieraus ein regelmäßiges Gitter mit \matlabInput{\matlabLink{meshgrid}}: \matlabInput{[X,Y] = \matlabLink{meshgrid}(xvec,yvec);}
             \end{itemize}
-            \item Jetzt \textit{elementweise} Berechnung: \matlabInput{Z = X.*Y;}
+            \item Jetzt \textit{elementweise} Berechnung: \matlabInput{Z = cos(X.*Y);}
         \end{enumerate}
     \end{frame}
 

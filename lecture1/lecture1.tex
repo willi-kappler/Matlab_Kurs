@@ -19,7 +19,7 @@
             \item In diesen Kursunterlagen werden die folgenden Konventionen verwendet:
             \item Eingabetext wird grün hinterlegt, z.B.: \matlabInput{plot}
             \item Alle Ausgaben werden blau hinterlegt, z.B.: \matlabOutput{a = 12.78}
-            \item Beispielprogramme werden grün hinterlegt mit Zeilennummern abgebildet und die Ausgaben dieser Programme
+            \item Beispielprogramme werden grün hinterlegt mit Zeilennummern abgebildet und die Ausgabe dieser Programme
             wird blau hinterlegt, z.B.:
         \end{itemize}
         \vspace{-0.5cm}
@@ -273,7 +273,7 @@
     \end{frame}
 
     \begin{frame}
-      \frametitle{Auflisten und löschen von Variablen}
+      \frametitle{Auflisten und Löschen von Variablen}
       \begin{itemize}
         \item \matlabInput{\matlabLink{who}}: gibt eine Liste der Variablen im Arbeitsspeicher aus
         \item \matlabInput{\matlabLink{whos}}: gibt zusätzliche Information (Typ, Größe, Speicherbedarf)
@@ -288,7 +288,7 @@
       \frameMexercise
       \begin{exercise}
           \sloppy
-          Geben Sie nacheinander folgende Anweisungen ein. Überlegen Sie vorher was wird Matlab ausgeben? \\ \\
+          Geben Sie nacheinander folgende Anweisungen ein. Überlegen Sie vorher, was Matlab ausgeben wird? \\ \\
           \texttt{u = 2,v = 5;} \keys{\return}\\
           \texttt{(u+6)/4} \keys{\return}\\
           \texttt{y = x+1} \keys{\return}\\
@@ -340,14 +340,14 @@
     \begin{frame}
       \frametitle{Zahlen, Vektoren und Matrizen in Matlab}
       \begin{itemize}
-          \item Eine Gruppierung von mehreren Zahlenwerten nennt man einen \textbf{Vektor}
-          \item Eine zweidimensionale Gruppierung von Zahlen nennt man eine \textbf{Matrix}
+          \item Eine Gruppierung von mehreren Zahlenwerten nennt man einen \textbf{Vektor}.
+          \item Eine zweidimensionale Gruppierung von Zahlen nennt man eine \textbf{Matrix}.
           \item \textbf{Es folgt}: Eine Zahl ist sowohl ein spezieller Vektor (der Länge \texttt{1}), als auch eine spezielle Matrix der Dimension \texttt{1$\times$1}.
-          \item \textbf{Ein Vektor der Länge n} ist eine spezielle Matrix der Dimension \texttt{n$\times$1} (Spaltenvektor) oder \texttt{1$\times$n} (Zeilenvektor)
+          \item \textbf{Ein Vektor der Länge n} ist eine spezielle Matrix der Dimension \texttt{n$\times$1} (Spaltenvektor) oder \texttt{1$\times$n} (Zeilenvektor).
           \item Matlab (\textbf{MAT}rix \textbf{LAB}oratory) kennt intern nur Matrizen!
           \item Die Berechnung der Wurzel in Matlab von vorhin: \\
           \matlabInput{a = \matlabLink{sqrt}(2)/2} \\
-          Hier ist \texttt{a} eine \texttt{1$\times$1} Matrix (Selbst die Konstante \texttt{2} wird als eine konstante \texttt{1$\times$1} Matrix interpretiert)
+          Hier ist \texttt{a} eine \texttt{1$\times$1} Matrix (selbst die Konstante \texttt{2} wird als eine konstante \texttt{1$\times$1} Matrix interpretiert).
       \end{itemize}
     \end{frame}
 
@@ -448,14 +448,14 @@
     \begin{frame}
       \frametitle{Multiplikation von Vektoren}
       \begin{itemize}
-          \item Der Stern (Asterisk, \matlabInput{*}) in Matlab definiert die übliche Vektormultiplikation
+          \item Der Stern (Asterisk, \matlabInput{*}) in Matlab definiert die übliche Vektormultiplikation.
           \item \matlabInput{a*b} ergibt somit einen Fehler, weil die Dimensionen von \matlabInput{a} und \matlabInput{b}
-          \texttt{5$\times$1} ist und diese nicht sinnvoll als Vektoren multipliziert werden können
+          \texttt{5$\times$1} ist und diese nicht sinnvoll als Vektoren multipliziert werden können.
           \item Das Apostroph \matlabInput{`} transponiert einen Vektor (oder eine Matrix), \matlabInput{a`} ist also ein Vektor
-          der Dimension \texttt{1$\times$5}
+          der Dimension \texttt{1$\times$5}.
           \item Mit diesem Wissen zurück zur Multiplikation:
-          \item \matlabInput{a*b`} ergibt das Skalarprodukt von \matlabInput{a} und \matlabInput{b}
-          \item \matlabInput{a`*b}, ergibt das dyadische Produkt (\texttt{5$\times$5} Matrix)
+          \item \matlabInput{a*b`} ergibt das Skalarprodukt von \matlabInput{a} und \matlabInput{b}.
+          \item \matlabInput{a`*b}, ergibt das dyadische Produkt (\texttt{5$\times$5} Matrix).
       \end{itemize}
     \end{frame}
 
@@ -464,7 +464,7 @@
       \frameMexercise
       \begin{exercise}
           \sloppy
-          Gegeben seien \texttt{a = [1 4 6]} und \texttt{b = [-1 2 1]}\\ \\
+          Gegeben seien \texttt{a = [1 4 6]} und \texttt{b = [-1 2 1]}.\\ \\
 
           Was gibt Matlab aus, wenn Sie die folgenden Anweisungen eingeben (geben Sie die Antwort, \textbf{bevor} Sie mit Matlab rechnen!):\\ \\
 
@@ -514,8 +514,10 @@
           \end{itemize}
           \item Fallstricke:
           \begin{itemize}
-              \item Sequentiell arbeitendes Programm, d.h. Matlab arbeitet Zeile für Zeile. Eine Variable muss erst definiert werden,
-              bevor man sie benutzen kann. Ändert man den Wert einer Variable, müssen alle Operationen mit dieser Variable wiederholt werden.
+              \item Sequentiell arbeitendes Programm, d.h. Matlab arbeitet Zeile für Zeile. 
+              \item Eine Variable muss erst definiert werden,
+              bevor man sie benutzen kann. 
+              \item Ändert man den Wert einer Variable, müssen alle Operationen mit dieser Variable wiederholt werden.
               \item Matlab ist ``amerikanisch''
               \begin{itemize}
                   \item Dezimalpunkt statt -komma

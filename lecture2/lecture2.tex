@@ -95,7 +95,7 @@
           \frameMexercise
           \begin{exercise}
               \sloppy
-              Schreiben Sie ein Script (\texttt{Wurzel.m}), welches die auf der letzten Folie gezeigte Grafik erzeugt.\\ \\
+              Schreiben Sie ein Script (\texttt{Wurzel.m}), welches die auf der vorherigen Folie gezeigte Grafik erzeugt.\\ \\
 
               \textbf{Tipp}: Der erste Befehl eines Scripts sollte \texttt{clear all} sein, um den Arbeitsspeicher zu leeren\\ \\
 
@@ -108,7 +108,7 @@
           \frameMexercise
           \begin{exercise}
               \sloppy
-              Die eindimensionale Stoffverteilung bei pulsartiger Zugabe des Stoffes hat die analytische Lösung:
+              Die eindimensionale Stoffverteilung bei pulsartiger Zugabe des Stoffes hat die analytische Lösung für die Konzentration \texttt{c} in \texttt{[mol/L]}:
 
               \begin{displaymath}
                   c(t,x) = \frac{1}{\sqrt{4 \pi Dt}} exp \left( - \frac{(x-vt)^{2}}{4Dt} \right)
@@ -124,13 +124,13 @@
           \frametitle{Fortsetzung}
           \begin{exercise}
               \sloppy
-              Tips:
+              Tipps:
 
               \vspace{0.2cm}
 
               \begin{itemize}
-                  \item Löschen sie zuerst den Arbeitsspeicher (\texttt{clear all})
-                  \item Definieren sie die Parameter:
+                  \item Löschen Sie zuerst den Arbeitsspeicher (\texttt{clear all})
+                  \item Definieren Sie die Parameter:
                   \begin{itemize}
                       \item \texttt{v}: Geschwindigkeit ($10^{-5} m/s$)
                       \item \texttt{D}: Diffusionskoeffizient ($10^{-7} m^{2}/s$)
@@ -197,7 +197,7 @@
                   \item Zeichen Sie die Konzentration in rot!
                   \item Beschriften Sie die Achsen!
                   \item Geben Sie dem Plot einen Titel!
-                  \item Fügen sie eine Legende hinzu!
+                  \item Fügen Sie eine Legende hinzu!
                   \item Plotten Sie mehrere Konzentrationsprofile in Ihrer Grafik, für \texttt{t = 1,2,3} Tage
                   \item ... vergessen Sie das \alert{Kommentieren} nicht!
               \end{itemize}
@@ -239,7 +239,6 @@
           \frametitle{Grafikdateien erstellen}
           \begin{itemize}
               \item Problem: Sie brauchen für einen Bericht einen guten Plot Ihrer Daten, und zwar genau 9cm breit, 6 cm hoch
-              \item Schon mal mit Excel probiert?
               \item Matlab-Lösung: Abbildung in Grafikdatei ``drucken'' (siehe \matlabInput{doc \matlabLink{print}})
               \item \matlabInput{\matlabLink{print} –djpeg100 –r300 my\_plot.jpg}
               \item \texttt{djpeg100}: Format und Qualität

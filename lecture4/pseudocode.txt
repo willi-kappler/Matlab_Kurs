@@ -1,8 +1,8 @@
 Hoerer abnehmen
-WENN Freizeichen
-  DANN waehle
-    WENN langes Tuten
-      DANN auf Antwort warten
-    SONST WENN kurzes Tuten
-      DANN lege auf
-SONST lege auf und ueberpruefe Anschluss
+IF Freizeichen
+  THEN waehle
+    IF langes Tuten
+      THEN auf Antwort warten
+    ELSE IF kurzes Tuten
+      THEN lege auf
+ELSE lege auf und ueberpruefe Anschluss

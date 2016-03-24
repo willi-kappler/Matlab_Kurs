@@ -65,11 +65,11 @@
           \item Ist für Menschen leicht verständlich
           \begin{itemize}
               \item kann aber vom Computer (noch) nicht ausgeführt werden
-              \item Ist in den meisten Fällen keine Programmiersprache
-              \item Orientiert sich aber oft an ``echten'' Programmiersprachen
+              \item ist in den meisten Fällen keine Programmiersprache
+              \item orientiert sich aber oft an ``echten'' Programmiersprachen
           \end{itemize}
           \item Soll Algorithmen verständlich und klar ausdrücken, ohne auf die Eigenheiten einer Programmiersprache Rücksicht nehmen zu müssen
-          \item Umgangssprache hilft Verfahrensschritte zu verdeutlichen
+          \item Umgangssprache hilft, Verfahrensschritte zu verdeutlichen
           \begin{itemize}
             \item \texttt{``durchlaufe das Feld a mit Index i''}
             \item \texttt{``vertausche die Inhalte der Variablen x und y''}
@@ -77,9 +77,9 @@
       \end{itemize}
   \end{frame}
 
-  \subsection{Bsp.: Telefonieren}
+  \subsection{Beispiel: Telefonieren}
   \begin{frame}
-      \frametitle{Bsp.: Telefonieren}
+      \frametitle{Beispiel: Telefonieren}
       \begin{itemize}
           \item Telefoniervorgang als Pseudocode:
           \lstinputlisting[language=pseudo]{pseudocode.txt}
@@ -116,12 +116,9 @@
           \frameMexercise
           \begin{exercise}
               \sloppy
-              Schreiben Sie einen Pseudocode für die Berechnung des Mittelwerts und der Standardabweichung \textit{s} eines Zahlenvektors \textbf{x} \\
+              Schreiben Sie einen Pseudocode für die Berechnung des Mittelwerts \textit{m} eines Zahlenvektors \textbf{x} \\
               \begin{displaymath}
                 m = \frac{1}{n} \sum_{i=1}^{n}X_{i}
-              \end{displaymath}
-              \begin{displaymath}
-                s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n}\left( x_{i} - m \right)^{2}} = \sqrt{\frac{1}{n-1} \left( \sum_{i=1}^{n} x_{i}^{2} - nm^{2} \right)}
               \end{displaymath}
           \end{exercise}
       \end{frame}
@@ -173,7 +170,7 @@
 
       \subsection{Verzweigung}
       \begin{frame}
-          \frametitle{Wenn/dann/sonst Anweisungen}
+          \frametitle{IF/THEN/ELSE Anweisungen}
           \begin{itemize}
             \item Beispiel: Ratengesetz nur dann auswerten, wenn die Konzentration größer null ist:
             \lstinputlisting{example4_1.m}
@@ -183,16 +180,34 @@
       \end{frame}
 
       \subsection{Schleifen}
+	  \begin{frame}
+          \frametitle{Schleifen: Pseudocode WHILE}
+           \begin{itemize}
+             \item Studieren als Pseudocode:
+             \lstinputlisting[language=pseudo]{pseudocode_schleife_while.txt}
+          \end{itemize}
+      \end{frame}      
+      
+      
       \begin{frame}
-          \frametitle{While Schleifen}
+          \frametitle{WHILE-Schleifen}
           \begin{itemize}
             \item Wird wiederholt, solange Bedingung erfüllt ist:
             \lstinputlisting{example4_3.m}
           \end{itemize}
       \end{frame}
 
+	  \begin{frame}
+          \frametitle{Schleifen: Pseudocode FOR}
+           \begin{itemize}
+             \item Vorlesungsbesuch als Pseudocode:
+             \lstinputlisting[language=pseudo]{pseudocode_schleife_for.txt}
+          \end{itemize}
+      \end{frame}
+      
+      
       \begin{frame}
-          \frametitle{For Schleifen}
+          \frametitle{FOR-Schleifen}
           \begin{itemize}
             \item Schleife mit vorgegebener Anzahl an Wiederholungen:
             \lstinputlisting{example4_4.m}
@@ -237,11 +252,11 @@
           \begin{exercise}
               \sloppy
               \begin{itemize}
-                \item Schreiben Sie ein Matlab-Programm zur Berechnung von Mittelwert und Standardabweichung eines Zufallsvektors unter Verwendung von Schleifen
+                \item Schreiben Sie ein Matlab-Programm zur Berechnung des Mittelwerts eines Zufallsvektors unter Verwendung von Schleifen
                 \item Schreiben Sie denselben Code vektorisiert (\texttt{sum(x)} berechnet die Summe des Vektors \textbf{x}).
-                \item Vergleichen Sie Ihr Ergebnis mit den Matlab-Befehlen \texttt{mean} und \texttt{std}!
-                \item \textbf{Zusatz}: Die Befehle \texttt{tic; ... toc}; messen die Zeit. Vergleichen Sie die Laufzeit ihrer beiden Programme und die der
-                Matlab-Befehle \texttt{mean} und \texttt{std}. (Für große Vektoren)
+                \item Vergleichen Sie Ihr Ergebnis mit dem Matlab-Befehl \texttt{mean}!
+                \item \textbf{Zusatz}: Die Befehle \texttt{tic; ... toc}; messen die Zeit. Vergleichen Sie die Laufzeit ihres Programms und die des
+                Matlab-Befehls \texttt{mean} (für große Vektoren)!
               \end{itemize}
           \end{exercise}
       \end{frame}

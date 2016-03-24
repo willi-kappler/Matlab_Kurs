@@ -1,0 +1,14 @@
+Registriere unter Ilias;
+
+FOR woche=1:1:10
+  besuche Vorlesung;
+  lade Hausaufgaben unter Ilias herunter;
+  bearbeite Hausaufgaben;
+  lade eigene Ergebnisse unter Ilias hoch;
+  erhalte Rueckmeldung;
+  IF Rueckmeldung unklar  
+     stelle Rueckfragen
+  ELSE merke richtiges Vorgehen
+END
+
+Schreibe Klausur;
