@@ -1,0 +1,24 @@
+Definiere Anzahl Teilchen n_part 
+und Einzelschrittweite dx=0.5*r_Brunnen
+
+FOR i=1:n_part 		      % Beginn Teilchenschleife
+   alpha=2*pi*i/n_part;       % Verteile Teilchen 
+			      % gleichmaessig auf Kreis
+			      % um Brunnen (Winkel)
+   x=xb+cos(alpha)*r_Brunnen; % Startpunkte der Partikel
+   y=yb+sin(alpha)*r_Brunnen;
+   x_traj=x; y_traj=y;        % Vektoren der 
+			      % Trajektorien
+   Initialisiere: t=0
+   WHILE (t<t_end) 	      % Beginn Trajektorien-
+			      % schleife
+     Berechne Abstand r zum Brunnen 
+     Berechne vx(x,y) und vy(x,y)
+     Berechne Absolutgeschwindigkeit v=(vx^2+vy^2)^0.5
+     Berechne Zeitschrittweite dt = dx/v
+     Update: x=x+vx*dt; y=y+vy*dt; t=t+dt;
+     Ergaenze x_traj um neues x und y_traj um neues y
+   end                       % Ende Trajektorienschleife
+   
+   Plotte Linie y_traj(x_traj) fuer aktuelles Teilchen
+end 			     % Ende Teilchenschleife

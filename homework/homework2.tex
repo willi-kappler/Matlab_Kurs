@@ -1,0 +1,114 @@
+\input{../common/header.tex}
+
+\matlabTitle{Hausaufgaben 2}
+
+% Rechtschreibprüfung mit: aspell -l de -t --tex-check-comments -c lecture6/lecture6.tex
+\usepackage{amsmath}
+\usepackage{mathtools}
+\setcounter{mchapter}{6}
+\setcounter{mexercise}{0}
+
+\begin{document}
+  \input{../common/title.tex}
+
+  \section{Aufgaben zur Vertiefung (Teil 2)}
+
+  \subsection{Grundwasserstand}
+  	\begin{frame}
+		\frametitle{Grundwasserstand für einen Brunnen\\ in Grundströmung}
+		\begin{align*}
+			h \left(x,y \right) &= C-I \cdot x + \frac{1}{2 \cdot \pi \cdot T} \cdot Q \cdot ln \left( \frac{r}{R} \right) \\
+			r &= \sqrt{\left( x-x_{b} \right)^{2}+\left( y-y_{b} \right)^{2}}                
+        \end{align*}  
+		\begin{small}        
+        \begin{itemize}
+        	\item C: Integrationskonstante (= 0 m)
+        	\item I: Hydraulischer Gradient ohne Brunnen (=1\%)
+			\item Q: Förderrate des Brunnens (Q = 1000 m$^3$/Tag)
+			\item T: Transmissivität des Grundwasserleiters (= 5*10$^{-3}$ m$^2$/s)
+			\item r: Abstand zum Brunnen
+			\item R: Reichweite des Brunnens (= 500 m)
+			\item x$_b$, y$_b$:	Koordinaten des Brunnens (-50,0)
+        \end{itemize}
+        \end{small}
+   	\end{frame}
+
+ \begin{frame}
+		\frametitle{Aufgabe a}
+          \begin{exercise}
+              \sloppy          
+              \textbf{Grundwasserstand}
+              \begin{itemize}
+                \item Erstellen Sie einen Grundwassergleichenplan (Karte mit Höhenlinien des Grundwasserstandes \texttt{h(x,y)})
+				\item Hinweise
+				\begin{itemize}
+					\item ln$\left(0\right)= -\infty$; deshalb ersetzen Sie alle Brunnenabstände < Brunnenradius (10 cm) durch den Brunnenradius. 
+					\item \texttt{daspect[1 1 1]} verhindert Verzerrung im Plot.
+				\end{itemize}
+              \end{itemize}
+          \end{exercise}
+      \end{frame}
+
+\begin{frame}
+		\frametitle{Pseudocode Grundwasserstand}
+		\begin{enumerate}
+			\item Definiere alle Konstanten.
+			\item Erzeuge regelmäßiges Gitter von (x,y)-Werten.
+			\item Berechne Abstand aller Punkte zum Brunnen (Matrix \textbf{R}).
+			\item Setze $R(R<r\_Brunnen)=r\_Brunnen$.
+			\item Berechne Grundwasserpegel an allen Punkten (ergibt Matrix \textbf{H}).
+			\item Erzeuge Höhenlinien-Grafik h(x,y).
+
+		\end{enumerate}
+			
+   	\end{frame}
+
+
+\subsection{Particle Tracking}
+  	\begin{frame}
+		\frametitle{Particle Tracking durch ein \\Geschwindigkeitsfeld}
+		\begin{itemize}
+			   \item Verfolge ein Teilchen auf dem Weg durch ein Geschwindigkeitsfeld $\frac{d\textbf{x}}{dt}=\textbf{v}\left(\textbf{x}\left(t \right) \right)$, \textbf{x} und \textbf{v} sind Vektoren          
+               \item Geschwindigkeitsfeld: Brunnen plus Grundströmung
+                 \begin{align*}
+                     v_{x}(x,y) &= \frac{T}{n \cdot m}I+\frac{1}{2 \cdot \pi \cdot n \cdot m}\cdot Q \cdot \left( \frac{x-x_{b}}{r^{2}} \right) \\
+         		     v_{y}(x,y) &= \frac{1}{2 \cdot \pi \cdot n \cdot m}Q \cdot \left( \frac{y-y_{b}}{r^{2}} \right)
+         		 \end{align*}
+          
+                  \begin{itemize}
+					\item m	Mächtigkeit des Grundwasserleiters (=10 m)
+					\item n	Porosität (25 \%)
+				  \end{itemize}
+				 \item Integration durch explizites Euler-Verfahren: $\textbf{x} \left(t+\Delta t \right)=\textbf{x}(t)+\Delta t \cdot \textbf{v}(\textbf{x}(t))$
+
+		\end{itemize}
+   	\end{frame}
+
+ \begin{frame}
+		\frametitle{Aufgabe}
+          \begin{exercise}
+              \sloppy          
+              \textbf{Particle Tracking}
+              \begin{itemize}
+                \item Setzen Sie Teilchen am Brunnenrand des Brunnens (Brunnenradius = 10 cm) ein.
+				\item Verfolgen Sie das Teilchen, bis 1 Jahr vergangen ist.
+				\item Grafische Ausgabe ist erwünscht.
+				\item Hinweis:
+				\begin{itemize}
+					\item Eine feste Ortsschrittweite $\Delta x < r\_Brunnen$ statt fester Zeitschrittweite $\Delta t$ beschleunigt die Berechnung.
+
+				\end{itemize}
+              \end{itemize}
+          \end{exercise}
+      \end{frame}
+      
+      \begin{frame}
+		\frametitle{Pseudocode Particle Tracking}
+		%\begin{tiny}
+          \lstinputlisting[language=pseudo]{pseudocode_particle_tracking.txt}
+
+		%\end{tiny}
+			
+   	\end{frame}
+
+\end{document}

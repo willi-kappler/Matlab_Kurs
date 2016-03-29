@@ -1,0 +1,89 @@
+\input{../common/header.tex}
+
+\matlabTitle{Hausaufgaben 1}
+
+% Rechtschreibprüfung mit: aspell -l de -t --tex-check-comments -c lecture6/lecture6.tex
+\usepackage{amsmath}
+\usepackage{mathtools}
+\setcounter{mchapter}{6}
+\setcounter{mexercise}{0}
+
+\begin{document}
+  \input{../common/title.tex}
+
+  \section{Aufgaben zur Vertiefung}
+
+  \subsection{Aufgabe a}
+  	\begin{frame}
+		\frametitle{Aufgabe a: Zahlenrechnen und Variablen}
+          \begin{exercise}
+              \sloppy          
+           Berechnen Sie jeweils mit Matlab die folgenden Ausdrücke bzw. geben Sie diese Ausdrücke nach dem gezeigten Zeichen \texttt{$>>$} in Matlab ein.
+Überlegen sie vorher, was Matlab mit dem Ausdruck macht!
+
+		   \begin{footnotesize}     	
+      	 	\begin{tabular}{ll}
+        	  1. 4+7 & 16. sqrt(-3) \\
+        	  2. v=4+7 & 17. b=3-4i \\ 
+        	  3. v & 18. real(b) \\
+        	  4. v+2\textasciicircum 3 & 19. imag(b) \\ 
+        	  5. clear all & 20. abs(b) \\
+        	  6. v & 21. round(24.3219)\\
+        	  7. v+2\textasciicircum 3 & 22. round(24.9219)\\ 
+          	  8. c=sin(5*$pi$/6)+1/3 & 23. round(24.9219)-24.9219 \\
+          	  9. c & 24. round(round(24.9219)-24.9219)\\          	 
+          	  10. format long & 25. round(100*24.9219)/100\\
+          	  11. c & 26. help clear\\
+          	  12. format short & 27. f=5 \\
+          	  13. c & 28. f \\
+          	  14. d & 29. clear f \\
+          	  15. d=c\textasciicircum 2-5*c+sqrt(2)-1 & 30. f         	          	  
+            \end{tabular} 
+           \end{footnotesize}       	      
+	            
+		  \end{exercise}
+   		\end{frame}
+
+\subsection{Aufgabe b}
+  	\begin{frame}
+		\frametitle{Aufgabe b: 2D-Plots}
+          \begin{exercise}
+              \sloppy          
+           Probieren Sie aus, was Matlab mit dem jeweiligen Ausdruck macht.
+           
+		  \begin{footnotesize}
+		     \begin{enumerate}
+      	 	 	\item \texttt{x=0:0.01:2*pi;}
+				\item \texttt{plot(x,sin(x))}
+				\item \texttt{plot(x,sin(x),’-’,x,cos(x),’-.’)}
+				\item \texttt{axis([-0.2 2*pi+0.2 -1.2 1.2])}
+				\item \texttt{legend(’Sin’,’Cos’)}
+				\item \texttt{xlabel(’x’)}
+				\item \texttt{ylabel(’f(x)’)}
+				\item \texttt{x=[1 2.5 3 4 1];}
+				\item \texttt{y=[1 -1 -2 1.5 0];}
+				\item \texttt{plot(x,y,’P’)}
+				\item \texttt{axis([-2 5 -3 3])}
+      	 	 \end{enumerate}
+		\end{footnotesize}         	 
+      	 Erzeugen sie eigene Funktionen und Plots.
+                
+		  \end{exercise}
+   		\end{frame}
+ 
+\subsection{Aufgabe c}
+  	\begin{frame}
+		\frametitle{Aufgabe c: Subplot}
+          \begin{exercise}
+              \sloppy          
+           \begin{itemize}
+           	\item Erstellen Sie mit Hilfe von Unterabbildungen eine Übersicht, die räumliche Profile und Durchbruchskurven für punktartigen Stoffeintrag und stufenartige Anfangsverteilung darstellen (s. Skripte aus den Vorlesungen).
+           	\item Erzeugen Sie hiervon eine schön aussehende Grafikdatei, die Sie z.B. für eine Powerpoint-Präsentation verwenden können.
+           	\item Tipp: Bei einer Durchbruchskurve ist der Ort fest und die Zeit variabel, im Gegensatz zu räumlichen Profilen, bei denen der Ort variabel ist und die Zeit fest.
+           \end{itemize}
+                
+		  \end{exercise}
+   		\end{frame}
+
+
+\end{document}
