@@ -18,7 +18,7 @@ FOR i=1:n_part 		      % Beginn Teilchenschleife
      Berechne Zeitschrittweite dt = dx/v
      Update: x=x+vx*dt; y=y+vy*dt; t=t+dt;
      Ergaenze x_traj um neues x und y_traj um neues y
-   end                       % Ende Trajektorienschleife
+   END                       % Ende Trajektorienschleife
    
    Plotte Linie y_traj(x_traj) fuer aktuelles Teilchen
-end 			     % Ende Teilchenschleife
+END 			     % Ende Teilchenschleife
