@@ -3,7 +3,8 @@
 \matlabTitle{6. Differentialgleichungen}
 
 % Rechtschreibprüfung mit: aspell -l de -t --tex-check-comments -c lecture6/lecture6.tex
-
+\usepackage{amsmath}
+\usepackage{mathtools}
 \setcounter{mchapter}{6}
 \setcounter{mexercise}{0}
 
@@ -28,23 +29,131 @@
       \frametitle{Nach diesem sechsten Block...}
       \begin{itemize}
           \item können Sie mit Hilfe von selbst definierten Funktionen in Matlab bereits implementierte Lösungsmethoden für Differentialgleichungen verwenden.
-          % Stimmt der zweite Punkt noch?
-          \item können Sie mit Hilfe von selbst definierten (Fehler-)Funktionen in Matlab Parameterwerte bestimmen, die diese Funktion minimieren.
-      \end{itemize}
+       \end{itemize}
   \end{frame}
 
 
-  % Hier kannst du weitere Folien einfügen...
   \section{DGL}
 
   \subsection{DGL}
   \begin{frame}
-      \frametitle{DGL}
+      \frametitle{Differentialgleichungen (DGLn)}
       \begin{itemize}
-        \item DGL mit Matlab...
+        \item einfache DGL
+           \begin{align*}
+             \frac{dy}{dt} &= a \cdot y,\texttt{ mit y(0)= y$_{0}$ bei t=0}
+           \end{align*}
+        \item System von DGLn
+            \begin{align*}
+               \frac{dy_{1}}{dt} &= f_{1}\left( t,y_{1},...,y_{n} \right), y_{1}(t_{0})=y_{1,0} \\
+               & \shortvdotswithin{=}
+               \frac{dy_{n}}{dt} &= f_{1}\left( t,y_{1},...,y_{n} \right), y_{n}(t_{0})=y_{n,0} \\
+               \Rightarrow \frac{d\textbf{y}}{dt} &= f\left( t,\textbf{y} \right), \textbf{y}(t_{0})=\textbf{y$_{0}$} \\
+             \end{align*}
+       
       \end{itemize}
   \end{frame}
 
+\subsection{DGL mit Matlab}
+  \begin{frame}
+      \frametitle{Generische Lösung von DGLn mit Matlab}
+      \begin{itemize}
+		\item Matlab stellt Methoden zur DGL-Lösung bereit, z.B. \texttt{ode45, ode15s, $\cdots$}        
+        \item Matlab braucht eine Funktion, in der die Veränderung \texttt{$\partial{x}/\partial{t}$} in Abhängigkeit der Zeit und des gegenwärtigen Wertes \texttt{x} errechnet wird
+         \begin{itemize}
+         	\item \texttt{function dxdt = velo(t,x)}\\
+         	 $\cdots$ \\
+         	 \texttt{dxdt = $\cdots$} \\
+         	\item Input
+         	  \begin{itemize}
+         	    \item erstes Argument: Zeit t
+         	    \item zweites Argument: Zustand x
+         	  \end{itemize}
+         	\item Output: Veränderung des Zustands mit der Zeit 
+		 \end{itemize}         	   
+        \item Matlab hat Funktionen zum Lösen von DGLn, die von einem Script (oder einer anderen Funktion) aufgerufen werden müssen \\
+%        \begin{itemize*}
+          \texttt{spanne = [tmin tmax]} \\
+          \texttt{x0 = $\cdots$} \\
+          \texttt{[t,x]=ode15s(@velo,spanne,x0)} \\
+%       \end{itemize*}               
+      \end{itemize}
+  \end{frame}
+
+
+  \secMexercise
+    \begin{frame}
+        \frameMexercise
+        \begin{exercise}
+            \sloppy
+            \textbf{Radioaktiver Zerfall mit DGL-Löser}
+            \begin{itemize}
+              \item Schreiben Sie eine Funktion \texttt{radio.m} für die DGL zur Beschreibung des radioaktiven Zerfalls eines Isotops A mit 100 Bq als Startwert und einer Zerfallsrate von \texttt{0,005  [1/Jahr]}: \texttt{function dxdt=radio(t,x)}.
+              \item Schreiben Sie ein aufrufendes Script. Plotten Sie den Zeitverlauf über einen anschaulich gewählten Zeitraum.
+            \end{itemize}
+        \end{exercise}
+    \end{frame}
+
+  \secMexercise
+      \begin{frame}
+          \frameMexercise
+          \begin{exercise}
+              \sloppy
+              \textbf{Gekoppelte DGLn: Radioaktive Zerfallskette mit DGL-Löser}
+              \begin{itemize}
+                \item Sie möchten nun nicht nur das Isotop A selbst, sondern auch sein Zerfallsprodukt B betrachten, das wiederum zerfällt. Schreiben Sie eine Funktion \texttt{radiokette.m} für die DGLn zur Beschreibung dieser radioaktiven Zerfallskette. Was sind sinnvoll gewählte Startwerte für A und B? Wählen Sie wieder die Zerfallsrate von \texttt{0,005  [1/Jahr]} für A und \texttt{0,003  [1/Jahr]} für B. Was ändert sich für Ihre Funktion \texttt{function dxdt=radiokette(t,x)} im Vergleich zur vorhergehenden Aufgabe?
+                \item Schreiben Sie wieder ein aufrufendes Script. Plotten Sie den Zeitverlauf von A und B.
+              \end{itemize}
+          \end{exercise}
+      \end{frame}
+
+  \secMexercise
+      \begin{frame}
+          \frameMexercise
+          \begin{exercise}
+              \sloppy
+              \textbf{Zusatz: Particle Tracking durch ein Geschwindigkeitsfeld}
+              \begin{itemize}
+               \item Geschwindigkeitsfeld: Brunnen plus Grundströmung
+                 \begin{displaymath}
+                   \begin{split}
+                     v_{x}(x,y) = \frac{T}{n \cdot m}I+\frac{1}{2 \cdot \pi \cdot n \cdot m}Q \cdot \left( \frac{x-x_{b}}{r^{2}} \right) \\
+         		     v_{y}(x,y) = \frac{1}{2 \cdot \pi \cdot n \cdot m}Q \cdot \left( \frac{y-y_{b}}{r^{2}} \right)
+         		    \end{split}
+                   \end{displaymath}
+          
+                  \begin{itemize}
+					\item m	Mächtigkeit des Grundwasserleiters (=10 m)
+					\item n	Porosität (25 \%)
+					\item I	Hydraulischer Gradient ohne Brunnen (=1\%)
+					\item Q	Förderrate des Brunnens ( \texttt{Q = 1000 m$^3$/d})
+					\item T	Transmissivität des Grundwasserleiters (\texttt{=5*10$^{-3}$ m$^2$/s})
+					\item r	Abstand zum Brunnen
+					\item xb,yb Koordinaten des Brunnens (-50,0)
+				  \end{itemize}
+
+                \end{itemize}
+          \end{exercise}
+      \end{frame}
+      
+      \begin{frame}
+		\frametitle{Fortsetzung}
+          \begin{exercise}
+              \sloppy          
+              \textbf{Zusatz: Particle Tracking durch ein Geschwindigkeitsfeld}
+              \begin{itemize}
+                \item Schreiben Sie eine Funktion velo.m für das Geschwindigkeitsfeld
+\texttt{function v=velo(t,x)}
+				\item Schreiben Sie ein aufrufendes Script mit Anfangspunkten wie in der Hausübung 
+				\begin{itemize}
+					\item Integrieren Sie über 14 Tage Laufzeit
+					\item Plotten Sie die Trajektorien
+				\end{itemize}
+              \end{itemize}
+          \end{exercise}
+      \end{frame}
+      
+      
 
   \section{Finally}
 

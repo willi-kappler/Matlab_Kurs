@@ -51,7 +51,7 @@
   \end{frame}
 
   \begin{frame}
-      \frametitle{Ein- und Ausgabe Fortsetzung}
+      \frametitle{Ein- und Ausgabe (Fortsetzung)}
       \begin{itemize}
           \item Beispiel:
           \begin{itemize}
@@ -110,7 +110,7 @@
   \end{frame}
 
   \begin{frame}
-      \frametitle{Skripte und Funktionen Fortsetzung}
+      \frametitle{Skripte und Funktionen (Fortsetzung)}
       \begin{itemize}
         \item ``Idee'' einer \textbf{Funktion}: ``Input $\Rightarrow$ Output''-Beziehung:
         \begin{itemize}
@@ -148,7 +148,7 @@
   \subsection{Schnittstelle}
   \begin{frame}
       \frametitle{Funktionen erfordern eine Schnittstelle}
-      Funktionen Definition in Matlab:
+      Funktionen - Definition in Matlab:
       \begin{itemize}
         \item Definiert in der ersten Zeile
         \item \matlabInput{\matlabLink{function} [out1,out2] = myfunction(in1,in2)}
@@ -183,7 +183,7 @@
           \sloppy
           Bogenmaß in Grad umwandeln:
           \begin{itemize}
-            \item Funktion \texttt{phi\_deg = r2d(phi)} soll einen Winkel in Bogenmaß ($0-2\pi$ ) in Gradmaß (0-360$^{\circ}$) umwandeln
+            \item Funktion \texttt{phi\_deg = r2d(phi)} soll einen Winkel, der in Bogenmaß ($0-2\pi$ ) gegeben ist, in Gradmaß (0-360$^{\circ}$) umwandeln.
           \end{itemize}
       \end{exercise}
   \end{frame}
@@ -195,8 +195,8 @@
           \sloppy
           Mittelwert und Standardabweichung:
           \begin{itemize}
-            \item Funktion \texttt{[m,s] = mittel\_standardabw(x)} soll Mittelwert und Standardabweichung des Vektors \texttt{x} berechnen.
-            \item Schreiben Sie zusätzlich ein Skript, das interaktiv nach der Anzahl \texttt{n} normal verteilter Zahlen mit vorgegebenem
+            \item Funktion \texttt{[m,s] = mittel\_standardabw(x)} soll Mittelwert und Standardabweichung des Vektors \texttt{x} berechnen. Verwenden Sie für Ihre Funktion einfach die in Matlab implementierten Befehle \texttt{mean} und \texttt{std}.
+            \item Schreiben Sie zusätzlich ein Skript, das \textbf{interaktiv} nach der Anzahl \texttt{n} normal verteilter Zahlen mit vorgegebenem
             Mittelwert \texttt{m\_init} und Standardabweichung \texttt{s\_init} fragt, diese generiert und die Funktion
             \texttt{mittel\_standardabw} aufruft und ausgibt.
             \item Tipp: normal verteilte Zufallszahlen generieren: \texttt{x = m\_init + s\_init * randn(n,1);}

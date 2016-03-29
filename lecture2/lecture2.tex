@@ -77,7 +77,7 @@
 
           \begin{itemize}
               \item \matlabInput{\matlabLink{plot}} trägt numerische Daten gegeneinander auf (\matlabInput{doc \matlabLink{plot}}).
-              \item \matlabInput{\matlabLink{plot}(x,y)} erzeugt ein Grafikfenster (\texttt{``figure''}) indem die Werte \texttt{y} gegen \texttt{x} aufgetragen sind.
+              \item \matlabInput{\matlabLink{plot}(x,y)} erzeugt ein Grafikfenster (\texttt{``figure''}), in dem die \texttt{y}-Werte gegen \texttt{x} aufgetragen sind.
               \item Beispiel: die Wurzelfunktion im Intervall [0,6] zeichnen:
               % \item \matlabInput{x = 0:0.5:6; y = sqrt(x); \matlabLink{plot}(x,y)}
               \insertMatlabOnlyCode[lastline=1]{example2_1}
@@ -95,7 +95,7 @@
           \frameMexercise
           \begin{exercise}
               \sloppy
-              Schreiben Sie ein Script (\texttt{Wurzel.m}), welches die auf der vorherigen Folie gezeigte Grafik erzeugt.\\ \\
+              Schreiben Sie ein Script (\texttt{Wurzel.m}), welches die auf der vorherigen Folie gezeigte Grafik erzeugt, d.h. Wurzelfunktion im Intervall [0,6].\\ \\
 
               \textbf{Tipp}: Der erste Befehl eines Scripts sollte \texttt{clear all} sein, um den Arbeitsspeicher zu leeren\\ \\
 
@@ -172,8 +172,8 @@
       \begin{frame}
           \frametitle{Mehrere Graphen in einem Plot, \texttt{figure}}
           \begin{itemize}
-              \item Variante 1: mehrere Parameterpärchen übergeben: \matlabInput{\matlabLink{plot}(t1,c1,'r-',t2,c2,'b:')}
-              \item Variante 2: mit \matlabInput{\matlabLink{hold} on} in Hinzufügmodus wechseln (und mit \matlabInput{\matlabLink{hold} off} wieder raus):
+              \item Variante 1: mehrere Parameterpaare übergeben: \matlabInput{\matlabLink{plot}(t1,c1,'r-',t2,c2,'b:')}
+              \item Variante 2: mit \matlabInput{\matlabLink{hold} on} in Hinzufügmodus wechseln (und mit \matlabInput{\matlabLink{hold} off} wieder verlassen):
               \begin{itemize}
                   \item \matlabInput{\matlabLink{plot}(t1,c1,'r-');}
                   \item \matlabInput{\matlabLink{hold} on; \matlabLink{plot}(t2,c2,‘b:‘); \matlabLink{hold} off}
@@ -192,15 +192,15 @@
           \frameMexercise
           \begin{exercise}
               \sloppy
+              Verschönern Sie Ihren Plot von vorhin:
               \begin{itemize}
-                  \item Verschönern Sie Ihren Plot von vorhin:
                   \item Zeichen Sie die Konzentration in rot!
                   \item Beschriften Sie die Achsen!
                   \item Geben Sie dem Plot einen Titel!
                   \item Fügen Sie eine Legende hinzu!
                   \item Plotten Sie mehrere Konzentrationsprofile in Ihrer Grafik, für \texttt{t = 1,2,3} Tage
-                  \item ... vergessen Sie das \alert{Kommentieren} nicht!
               \end{itemize}
+         	  ... vergessen Sie das \alert{Kommentieren} nicht!
           \end{exercise}
       \end{frame}
 
@@ -290,7 +290,7 @@
       \begin{frame}
         \frametitle{Ausblick}
         \begin{itemize}
-            \item \textbf{Hausaufgaben zur Vertiefung}:
+            \item \textbf{Ziel der Hausaufgaben zur Vertiefung}:
             \begin{itemize}
                 \item Sie können verschiedene Rechnungen mit Matlab ausführen und kennen die Funktionsweise der in Matlab implementierten Funktionen.
                 \item Sie können Funktionen in 2D-Grafiken darstellen.
