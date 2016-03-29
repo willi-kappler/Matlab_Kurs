@@ -41,7 +41,7 @@
       \begin{itemize}
         \item einfache DGL
            \begin{align*}
-             \frac{dy}{dt} &= a \cdot y,\texttt{ mit y(0)= y$_{0}$ bei t=0}
+             \frac{dy}{dt} &= a \cdot y,\text{ mit y(0)= y$_{0}$ bei t=0}
            \end{align*}
         \item System von DGLn
             \begin{align*}
@@ -50,7 +50,7 @@
                \frac{dy_{n}}{dt} &= f_{1}\left( t,y_{1},...,y_{n} \right), y_{n}(t_{0})=y_{n,0} \\
                \Rightarrow \frac{d\textbf{y}}{dt} &= f\left( t,\textbf{y} \right), \textbf{y}(t_{0})=\textbf{y$_{0}$} \\
              \end{align*}
-       
+
       \end{itemize}
   \end{frame}
 
@@ -58,7 +58,7 @@
   \begin{frame}
       \frametitle{Generische Lösung von DGLn mit Matlab}
       \begin{itemize}
-		\item Matlab stellt Methoden zur DGL-Lösung bereit, z.B. \texttt{ode45, ode15s, $\cdots$}        
+		\item Matlab stellt Methoden zur DGL-Lösung bereit, z.B. \matlabLink{ode45}, \matlabLink{ode15s}, $\cdots$
         \item Matlab braucht eine Funktion, in der die Veränderung \texttt{$\partial{x}/\partial{t}$} in Abhängigkeit der Zeit und des gegenwärtigen Wertes \texttt{x} errechnet wird
          \begin{itemize}
          	\item \texttt{function dxdt = velo(t,x)}\\
@@ -69,14 +69,14 @@
          	    \item erstes Argument: Zeit t
          	    \item zweites Argument: Zustand x
          	  \end{itemize}
-         	\item Output: Veränderung des Zustands mit der Zeit 
-		 \end{itemize}         	   
+         	\item Output: Veränderung des Zustands mit der Zeit
+		 \end{itemize}
         \item Matlab hat Funktionen zum Lösen von DGLn, die von einem Script (oder einer anderen Funktion) aufgerufen werden müssen \\
 %        \begin{itemize*}
           \texttt{spanne = [tmin tmax]} \\
           \texttt{x0 = $\cdots$} \\
           \texttt{[t,x]=ode15s(@velo,spanne,x0)} \\
-%       \end{itemize*}               
+%       \end{itemize*}
       \end{itemize}
   \end{frame}
 
@@ -119,7 +119,7 @@
                      v_{x}(x,y) &= \frac{T}{n \cdot m}I+\frac{1}{2 \cdot \pi \cdot n \cdot m}Q \cdot \left( \frac{x-x_{b}}{r^{2}} \right) \\
          		     v_{y}(x,y) &= \frac{1}{2 \cdot \pi \cdot n \cdot m}Q \cdot \left( \frac{y-y_{b}}{r^{2}} \right)
          		 \end{align*}
-          
+
                   \begin{itemize}
 					\item m	Mächtigkeit des Grundwasserleiters (=10 m)
 					\item n	Porosität (25 \%)
@@ -133,16 +133,16 @@
                 \end{itemize}
           \end{exercise}
       \end{frame}
-      
+
       \begin{frame}
 		\frametitle{Fortsetzung}
           \begin{exercise}
-              \sloppy          
+              \sloppy
               \textbf{Zusatz: Particle Tracking durch ein Geschwindigkeitsfeld}
               \begin{itemize}
                 \item Schreiben Sie eine Funktion velo.m für das Geschwindigkeitsfeld
 \texttt{function v=velo(t,x)}
-				\item Schreiben Sie ein aufrufendes Script mit Anfangspunkten wie in der Hausübung 
+				\item Schreiben Sie ein aufrufendes Script mit Anfangspunkten wie in der Hausübung
 				\begin{itemize}
 					\item Integrieren Sie über 14 Tage Laufzeit
 					\item Plotten Sie die Trajektorien
@@ -150,8 +150,8 @@
               \end{itemize}
           \end{exercise}
       \end{frame}
-      
-      
+
+
 
   \section{Finally}
 
